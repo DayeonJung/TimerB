@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OptionControl" customModule="TimerB" customModuleProvider="target">
+            <connections>
+                <outlet property="minusButton" destination="T6u-El-9GX" id="wxR-b3-SQ1"/>
+                <outlet property="plusButton" destination="jtq-Sf-pTt" id="GUl-0g-dgD"/>
+                <outlet property="titleLable" destination="ujb-UM-xoK" id="ggg-iX-855"/>
+                <outlet property="valueLabel" destination="u4S-95-hSg" id="CLa-Rl-13l"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="255" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujb-UM-xoK">
+                    <rect key="frame" x="116" y="0.0" width="23" height="15"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4S-95-hSg">
+                    <rect key="frame" x="103" y="22" width="49" height="38"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="44"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T6u-El-9GX" customClass="IconButton" customModule="TimerB" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="20" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="A1C-o6-E0J"/>
+                        <constraint firstAttribute="width" constant="40" id="YWe-PH-cwR"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jtq-Sf-pTt" customClass="IconButton" customModule="TimerB" customModuleProvider="target">
+                    <rect key="frame" x="215" y="20" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="40" id="IBf-T1-8IT"/>
+                        <constraint firstAttribute="height" constant="40" id="qzl-nN-ufq"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="u4S-95-hSg" secondAttribute="bottom" id="03N-Np-cTd"/>
+                <constraint firstItem="u4S-95-hSg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1gn-DK-yza"/>
+                <constraint firstAttribute="bottom" secondItem="jtq-Sf-pTt" secondAttribute="bottom" id="2KM-Dv-S1N"/>
+                <constraint firstItem="u4S-95-hSg" firstAttribute="leading" secondItem="T6u-El-9GX" secondAttribute="trailing" constant="63" id="BCS-Vs-p9c"/>
+                <constraint firstAttribute="top" secondItem="u4S-95-hSg" secondAttribute="top" constant="-22" id="BNc-jf-l6d"/>
+                <constraint firstItem="jtq-Sf-pTt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ws6-Xq-2ph"/>
+                <constraint firstItem="T6u-El-9GX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZKa-4g-CuT"/>
+                <constraint firstItem="ujb-UM-xoK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dJF-xN-UhC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="T6u-El-9GX" secondAttribute="bottom" id="dZ9-AP-44d"/>
+                <constraint firstItem="jtq-Sf-pTt" firstAttribute="leading" secondItem="u4S-95-hSg" secondAttribute="trailing" constant="63" id="ehB-FH-W7j"/>
+                <constraint firstItem="ujb-UM-xoK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ikF-w6-2pe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="253.62318840579712" y="-149.33035714285714"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="T6u-El-9GX">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+        <designable name="jtq-Sf-pTt">
+            <size key="intrinsicContentSize" width="46" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
