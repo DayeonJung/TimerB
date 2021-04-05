@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
+		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
+		B4824914261B5B5600D07969 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824913261B5B5600D07969 /* TitleButton.swift */; };
+		B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824916261B5FBE00D07969 /* StartGameCell.swift */; };
+		B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4824917261B5FBE00D07969 /* StartGameCell.xib */; };
+		B482491C261B61AB00D07969 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482491B261B61AB00D07969 /* Color.xcassets */; };
+		B4A08DC32619B39300F46CD9 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A08DC22619B39300F46CD9 /* List.swift */; };
 		B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CB26198E18002DEBC7 /* AppDelegate.swift */; };
 		B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */; };
 		B4A255D326198E18002DEBC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4A255D126198E18002DEBC7 /* Main.storyboard */; };
@@ -15,9 +22,19 @@
 		B4A255E2261993A2002DEBC7 /* MainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255E1261993A2002DEBC7 /* MainModel.swift */; };
 		B4A255E626199456002DEBC7 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255E526199456002DEBC7 /* MainViewModel.swift */; };
 		B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255E82619952E002DEBC7 /* MainViewController.swift */; };
+		B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255ED261999BD002DEBC7 /* OptionControl.swift */; };
+		B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4A255F0261999CD002DEBC7 /* OptionControl.xib */; };
+		B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255F326199C95002DEBC7 /* IconButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
+		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
+		B4824913261B5B5600D07969 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		B4824916261B5FBE00D07969 /* StartGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCell.swift; sourceTree = "<group>"; };
+		B4824917261B5FBE00D07969 /* StartGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartGameCell.xib; sourceTree = "<group>"; };
+		B482491B261B61AB00D07969 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		B4A08DC22619B39300F46CD9 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		B4A255C826198E18002DEBC7 /* TimerB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A255CB26198E18002DEBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +45,9 @@
 		B4A255E1261993A2002DEBC7 /* MainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModel.swift; sourceTree = "<group>"; };
 		B4A255E526199456002DEBC7 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		B4A255E82619952E002DEBC7 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B4A255ED261999BD002DEBC7 /* OptionControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionControl.swift; sourceTree = "<group>"; };
+		B4A255F0261999CD002DEBC7 /* OptionControl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionControl.xib; sourceTree = "<group>"; };
+		B4A255F326199C95002DEBC7 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B4A08DC12619B37600F46CD9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B4A08DC22619B39300F46CD9 /* List.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B4A255BF26198E18002DEBC7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +88,7 @@
 		B4A255CA26198E18002DEBC7 /* TimerB */ = {
 			isa = PBXGroup;
 			children = (
+				B4A08DC12619B37600F46CD9 /* Extension */,
 				B4A255EC26199711002DEBC7 /* Custom */,
 				B4A255E0261992CC002DEBC7 /* Main */,
 				B4A255CB26198E18002DEBC7 /* AppDelegate.swift */,
@@ -78,6 +107,10 @@
 				B4A255E1261993A2002DEBC7 /* MainModel.swift */,
 				B4A255E526199456002DEBC7 /* MainViewModel.swift */,
 				B4A255E82619952E002DEBC7 /* MainViewController.swift */,
+				B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */,
+				B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */,
+				B4824916261B5FBE00D07969 /* StartGameCell.swift */,
+				B4824917261B5FBE00D07969 /* StartGameCell.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -85,6 +118,11 @@
 		B4A255EC26199711002DEBC7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				B4824913261B5B5600D07969 /* TitleButton.swift */,
+				B4A255F326199C95002DEBC7 /* IconButton.swift */,
+				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
+				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
+				B482491B261B61AB00D07969 /* Color.xcassets */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -146,8 +184,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
+				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
+				B482491C261B61AB00D07969 /* Color.xcassets in Resources */,
+				B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */,
 				B4A255D326198E18002DEBC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,9 +203,15 @@
 			files = (
 				B4A255E626199456002DEBC7 /* MainViewModel.swift in Sources */,
 				B4A255E2261993A2002DEBC7 /* MainModel.swift in Sources */,
+				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,
+				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
+				B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */,
+				B4824914261B5B5600D07969 /* TitleButton.swift in Sources */,
+				B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */,
+				B4A08DC32619B39300F46CD9 /* List.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

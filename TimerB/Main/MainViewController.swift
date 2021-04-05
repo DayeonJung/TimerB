@@ -10,11 +10,50 @@ import UIKit
 class MainViewController: UIViewController {
 
     @IBOutlet weak var mainList: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.mainList.setCell(cellName: SelectOptionCell.self)
+        self.mainList.setCell(cellName: StartGameCell.self)
     }
     
 
+}
+
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.item == 2 {
+            let startCell = collectionView.loadCell(identifier: StartGameCell.self, indexPath: indexPath)
+            return startCell
+        }
+        
+        let cell = collectionView.loadCell(identifier: SelectOptionCell.self, indexPath: indexPath)
+        cell.setViewModel(with: SelectOptionViewModel(model: OptionModel(type: .Player,
+                                                                         value: 0)))
+        
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        
+        return UIEdgeInsets(top: 36,
+                            left: 0,
+                            bottom: 86,
+                            right: 0)
+    }
+
+}
+
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 60)
+    }
 }
