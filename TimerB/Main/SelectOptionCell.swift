@@ -28,7 +28,7 @@ class SelectOptionViewModel: OptionViewModelProtocol {
     }
     
     func setNumber(with number: Int) {
-        self.option.value = number
+        self.option.setValue(with: number)
     }
 }
 
@@ -49,14 +49,14 @@ class SelectOptionCell: UICollectionViewCell {
         // Initialization code
         
         self.optionView.plusButton.onClick = {
-            let original = self.viewModel.option.value
+            let original = self.viewModel.option.currentValue()
             if original < 99 {
                 self.viewModel.setNumber(with: original + 1)
             }
         }
         
         self.optionView.minusButton.onClick = {
-            let original = self.viewModel.option.value
+            let original = self.viewModel.option.currentValue()
             if original >= 1 {
                 self.viewModel.setNumber(with: original - 1)
             }

@@ -11,6 +11,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var mainList: UICollectionView!
     
+    var mainViewModel = MainViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +24,10 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.mainViewModel.sections.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 3
@@ -35,9 +41,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
         
         let cell = collectionView.loadCell(identifier: SelectOptionCell.self, indexPath: indexPath)
-        cell.setViewModel(with: SelectOptionViewModel(model: OptionModel(type: .Player,
-                                                                         value: 0)))
-        
+        cell.setViewModel(with: self.mainViewModel.options[indexPath.item])
         
         return cell
     }

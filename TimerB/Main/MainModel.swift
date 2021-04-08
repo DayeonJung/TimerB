@@ -7,4 +7,8 @@
 
 import Foundation
 
+enum MainSection {
+    case SetOptions
+    case Recent
+}
 

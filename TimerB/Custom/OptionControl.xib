@@ -56,17 +56,16 @@
                 <constraint firstAttribute="bottom" secondItem="u4S-95-hSg" secondAttribute="bottom" id="03N-Np-cTd"/>
                 <constraint firstItem="u4S-95-hSg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1gn-DK-yza"/>
                 <constraint firstAttribute="bottom" secondItem="jtq-Sf-pTt" secondAttribute="bottom" id="2KM-Dv-S1N"/>
-                <constraint firstItem="u4S-95-hSg" firstAttribute="leading" secondItem="T6u-El-9GX" secondAttribute="trailing" constant="63" id="BCS-Vs-p9c"/>
+                <constraint firstItem="jtq-Sf-pTt" firstAttribute="leading" secondItem="T6u-El-9GX" secondAttribute="trailing" constant="175" id="BCS-Vs-p9c"/>
                 <constraint firstAttribute="top" secondItem="u4S-95-hSg" secondAttribute="top" constant="-22" id="BNc-jf-l6d"/>
                 <constraint firstItem="jtq-Sf-pTt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ws6-Xq-2ph"/>
                 <constraint firstItem="T6u-El-9GX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZKa-4g-CuT"/>
                 <constraint firstItem="ujb-UM-xoK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dJF-xN-UhC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="T6u-El-9GX" secondAttribute="bottom" id="dZ9-AP-44d"/>
-                <constraint firstItem="jtq-Sf-pTt" firstAttribute="leading" secondItem="u4S-95-hSg" secondAttribute="trailing" constant="63" id="ehB-FH-W7j"/>
                 <constraint firstItem="ujb-UM-xoK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ikF-w6-2pe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="253.62318840579712" y="-149.33035714285714"/>
+            <point key="canvasLocation" x="252.89855072463769" y="-149.33035714285714"/>
         </view>
     </objects>
     <designables>
