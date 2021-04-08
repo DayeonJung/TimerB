@@ -13,12 +13,16 @@ enum Option: String {
 }
 
 struct OptionModel {
-    let type: Option
+    private let type: Option
     private var value: Int
     
     init(type: Option, value: Int) {
         self.type = type
         self.value = value
+    }
+    
+    func currentType() -> Option {
+        return self.type
     }
     
     func currentValue() -> Int {
@@ -69,7 +73,7 @@ class OptionControl: UIView {
     }
     
     private func setUI() {
-        self.titleLable.text = self.viewModel?.type.rawValue
+        self.titleLable.text = self.viewModel?.currentType().rawValue
         self.valueLabel.text = String(self.viewModel?.currentValue() ?? 0)
     }
     

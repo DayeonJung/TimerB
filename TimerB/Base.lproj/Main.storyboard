@@ -78,6 +78,36 @@
             </objects>
             <point key="canvasLocation" x="683" y="114"/>
         </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="Lnj-c1-yy1">
+            <objects>
+                <viewController storyboardIdentifier="TimerViewController" id="zVI-0N-DUb" customClass="TimerViewController" customModule="TimerB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kn6-vY-TLu">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPz-Rj-coP">
+                                <rect key="frame" x="152" y="152" width="110" height="120"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="100"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ezh-CA-Nky"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lPz-Rj-coP" firstAttribute="centerX" secondItem="Kn6-vY-TLu" secondAttribute="centerX" id="b4t-MR-CG7"/>
+                            <constraint firstItem="lPz-Rj-coP" firstAttribute="top" secondItem="Ezh-CA-Nky" secondAttribute="top" constant="108" id="om4-TL-9gz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="timeLabel" destination="lPz-Rj-coP" id="bhj-7P-9Ss"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-cS-Wh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1409" y="114"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">

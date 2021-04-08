@@ -22,4 +22,19 @@ class MainViewModel {
         ]
     }
     
+    private func optionInfo(with type: Option) -> SelectOptionViewModel {
+        return self.options.filter({$0.option.currentType() == type}).first ?? self.options.first!
+    }
+    
+    func setTimeViewModel() -> TimerViewModel {
+        let playerNum = self.optionInfo(with: .Player).option.currentValue()
+        
+        let playerInfos = Array(1...playerNum).map({ num -> PlayerInfo in
+            return PlayerInfo(color: "#32D74B", name: "player" + String(num))
+        })
+
+        return TimerViewModel(time: self.optionInfo(with: .Time).option.currentValue(),
+                              player: playerInfos)
+    }
+    
 }

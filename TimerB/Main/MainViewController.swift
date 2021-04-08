@@ -37,6 +37,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if indexPath.item == 2 {
             let startCell = collectionView.loadCell(identifier: StartGameCell.self, indexPath: indexPath)
+            
+            startCell.startButton.onClick = {
+                
+                let timerVC = getController(with: .Main,
+                              viewController: TimerViewController.self)
+                timerVC.timerViewModel = self.mainViewModel.setTimeViewModel()
+                self.navigationController?.pushViewController(timerVC, animated: true)
+            }
+            
             return startCell
         }
         
