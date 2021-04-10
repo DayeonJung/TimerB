@@ -17,7 +17,7 @@ class WaveView: UIView, CAAnimationDelegate {
     var waveLayer = CAShapeLayer()
 
     var points = [CGPoint]()
-    var zeroYPoint: CGFloat = UIScreen.main.bounds.height - 120
+    var zeroYPoint: CGFloat = UIScreen.main.bounds.height - 80
     var amplitude: CGFloat = 8
     
     var shouldUpdate: Bool = false {
@@ -53,8 +53,6 @@ class WaveView: UIView, CAAnimationDelegate {
         self.waveLayer.path = self.path.cgPath
         self.waveLayer.fillColor = UIColor.blue.cgColor
         self.layer.addSublayer(self.waveLayer)
-
-        
     }
     
     override func draw(_ rect: CGRect) {

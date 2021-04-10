@@ -13,9 +13,9 @@ class TimerViewController: UIViewController {
         didSet {
             self.timerViewModel?.timeDidChage = { vm in
                 self.timeLabel.text = String(vm.currentTime)
-                if !self.shouldUpdate {
+//                if !self.shouldUpdate {
 //                    self.shouldUpdate = true
-                }
+//                }
             }
         }
     }
@@ -28,16 +28,17 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     
-//    let waveView = WaveView(frame: CGRect(x: 0,
-//                                          y: 0,
-//                                          width: UIScreen.main.bounds.width,
-//                                          height: UIScreen.main.bounds.height))
+    var waveView: WaveView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
         
-//        self.view.addSubview(self.waveView)
+        self.waveView = WaveView(frame: CGRect(x: 0,
+                                               y: 0,
+                                               width: UIScreen.main.bounds.width,
+                                               height: UIScreen.main.bounds.height))
+        self.view.addSubview(self.waveView)
     }
     
 }
