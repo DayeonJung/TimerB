@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
 		B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FF095261F24AE0079BC74 /* TimerViewController.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
 		B47FF095261F24AE0079BC74 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				B4A255F326199C95002DEBC7 /* IconButton.swift */,
 				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
 				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
+				B419B53A2621606B00258796 /* WaveView.swift */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
+				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,
 				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
