@@ -6,25 +6,38 @@
 //
 
 import Foundation
+import UIKit
 
 protocol TimerViewModelProtocol {
+    var playerInfo: [PlayerInfo] { get set }
     var currentTime: Int { get }
+    var timeDidChage: ((Int) -> ())? { get set }
+    var playerDidChange: ((PlayerInfo) -> ())? { get set }
     func timeIsGoing()
-    var timeDidChage: ((TimerViewModelProtocol) -> ())? { get set }
+    func clickedNextPlayer()
 }
 
-class TimerViewModel {
+class TimerViewModel: TimerViewModelProtocol {
 
     private var maxTime: Int
     var currentTime: Int {
         didSet {
-            self.timeDidChage?(self)
+            self.timeDidChage?(self.currentTime)
         }
     }
-    private var playerInfo: [PlayerInfo]
+    
+    var playerInfo: [PlayerInfo]
     
     private var timer: Timer?
-    var timeDidChage: ((TimerViewModelProtocol) -> ())?
+    var timeDidChage: ((Int) -> ())?
+
+    var currentPlayerIdx: Int = 0 {
+        didSet {
+            self.currentTime = self.maxTime
+            self.playerDidChange?(self.playerInfo[self.currentPlayerIdx])
+        }
+    }
+    var playerDidChange: ((PlayerInfo) -> ())?
 
     
     init(time: Int, player: [PlayerInfo]) {
@@ -37,13 +50,10 @@ class TimerViewModel {
                                           selector: #selector(timeIsGoing),
                                           userInfo: nil,
                                           repeats: true)
+        
+        
     }
 
-    
-}
-
-extension TimerViewModel: TimerViewModelProtocol {
-    
     @objc func timeIsGoing() {
         
         let nextTime = self.currentTime - 1
@@ -56,5 +66,8 @@ extension TimerViewModel: TimerViewModelProtocol {
 
     }
     
-    
+    func clickedNextPlayer() {
+        let idx = self.currentPlayerIdx + 1
+        self.currentPlayerIdx = idx >= self.playerInfo.count ? 0 : idx
+    }
 }

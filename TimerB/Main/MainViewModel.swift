@@ -6,8 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
 class MainViewModel {
+    
+    let colorSet: [UIColor] = [.systemRed,
+                               .systemOrange,
+                               .systemYellow,
+                               .systemGreen,
+                               .systemTeal,
+                               .systemBlue,
+                               .systemIndigo,
+                               .systemPurple,
+                               .systemPink]
     
     var sections: [MainSection]
     var options: [SelectOptionViewModel]
@@ -16,7 +27,7 @@ class MainViewModel {
         self.sections = [.SetOptions]
         self.options = [
             SelectOptionViewModel(model: OptionModel(type: .Player,
-                                                     value: 1)),
+                                                     value: 2)),
             SelectOptionViewModel(model: OptionModel(type: .Time,
                                                      value: 99))
         ]
@@ -29,8 +40,8 @@ class MainViewModel {
     func setTimeViewModel() -> TimerViewModel {
         let playerNum = self.optionInfo(with: .Player).option.currentValue()
         
-        let playerInfos = Array(1...playerNum).map({ num -> PlayerInfo in
-            return PlayerInfo(color: "#32D74B", name: "player" + String(num))
+        let playerInfos = Array(0..<playerNum).map({ num -> PlayerInfo in
+            return PlayerInfo(color: self.colorSet[num], name: "player" + String(num + 1))
         })
 
         return TimerViewModel(time: self.optionInfo(with: .Time).option.currentValue(),

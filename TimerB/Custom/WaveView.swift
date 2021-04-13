@@ -12,33 +12,36 @@ class WaveView: UIView, CAAnimationDelegate {
     
     let width = UIScreen.main.bounds.width
     let height = UIScreen.main.bounds.height
+    
+    private var bgColor: UIColor = .black
 
-    var frontPoints = [CGPoint]() {
+    private var frontPoints = [CGPoint]() {
         didSet {
             self.frontWaveLayer.path = self.path(from: self.frontPoints).cgPath
         }
     }
-    var frontWaveLayer = CAShapeLayer()
+    private var frontWaveLayer = CAShapeLayer()
     
-    var backPoints = [CGPoint]() {
+    private var backPoints = [CGPoint]() {
         didSet {
             self.backWaveLayer.path = self.path(from: self.backPoints).cgPath
         }
     }
-    var backWaveLayer = CAShapeLayer()
+    private var backWaveLayer = CAShapeLayer()
 
     
     
-    var zeroYPoint: CGFloat = 0
-    var amplitude: CGFloat = 13
-    var drawPeriod: Double = 0.002
+    private var zeroYPoint: CGFloat = 0
+    private var amplitude: CGFloat = 13
+    private var drawPeriod: Double = 0.002
     
-    var timer = Timer()
+    private var timer = Timer()
     
-    var shouldUpdate: Bool = false {
-        didSet {
-        }
-        
+
+    required init(frame: CGRect, bgColor: UIColor) {
+        super.init(frame: frame)
+        self.bgColor = bgColor
+        self.commoninit()
     }
     
     override init(frame: CGRect) {
@@ -56,11 +59,13 @@ class WaveView: UIView, CAAnimationDelegate {
     func commoninit() {
         
         self.frontPoints = self.makePointsToDraw()
-        self.frontWaveLayer.fillColor = UIColor.blue.cgColor
+        self.frontWaveLayer.fillColor = self.bgColor.cgColor
+
         self.layer.addSublayer(self.frontWaveLayer)
         
         self.backPoints = self.makePointsToDraw(delay: 2 * .pi/4)
-        self.backWaveLayer.fillColor = UIColor.blue.withAlphaComponent(0.5).cgColor
+        self.backWaveLayer.fillColor = self.bgColor.withAlphaComponent(0.5).cgColor
+
         self.layer.insertSublayer(self.backWaveLayer, at: 0)
         
         self.startAnimation()
@@ -143,6 +148,22 @@ class WaveView: UIView, CAAnimationDelegate {
             return CGPoint(x: xToMove, y: yToMove)
         })
         
+    }
+    
+    
+    func shouldInit(with bgColor: UIColor) {
+        
+        self.bgColor = bgColor
+        self.zeroYPoint = 0
+        
+        self.frontPoints = self.makePointsToDraw()
+        self.frontWaveLayer.fillColor = self.bgColor.cgColor
+
+        self.backPoints = self.makePointsToDraw(delay: 2 * .pi/4)
+        self.backWaveLayer.fillColor = self.bgColor.withAlphaComponent(0.5).cgColor
+
+        setNeedsDisplay()
+
     }
     
 }

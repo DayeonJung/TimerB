@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 struct PlayerInfo {
-    let color: String
+    let color: UIColor
     let name: String
 }
 
