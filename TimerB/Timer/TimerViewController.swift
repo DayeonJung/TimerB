@@ -41,4 +41,9 @@ class TimerViewController: UIViewController {
         self.view.addSubview(self.waveView)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        // Timer 해제
+        self.waveView.stopAnimation()
+    }
+    
 }
