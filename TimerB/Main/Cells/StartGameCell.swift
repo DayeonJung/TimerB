@@ -18,7 +18,7 @@ class StartGameCell: UICollectionViewCell {
         self.startButton.setModel(
             with: TitleButtonModel(title: "Game Start",
                                    titleColor: .white,
-                                   bgColor: UIColor(named: "start"))
+                                   bgColor: UIColor.systemPink)
         )
     }
 

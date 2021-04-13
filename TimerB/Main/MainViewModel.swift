@@ -16,7 +16,7 @@ class MainViewModel {
         self.sections = [.SetOptions]
         self.options = [
             SelectOptionViewModel(model: OptionModel(type: .Player,
-                                                     value: 0)),
+                                                     value: 1)),
             SelectOptionViewModel(model: OptionModel(type: .Time,
                                                      value: 99))
         ]

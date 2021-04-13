@@ -42,9 +42,9 @@ class IconButton: UIButton {
         self.clipsToBounds = true
         
         self.layer.borderWidth = 1
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderColor = UIColor.white.cgColor
         
-        self.tintColor = .black
+        self.tintColor = .white
         
         self.addTarget(self, action: #selector(clickAction(button:)), for: .touchUpInside)
     }
