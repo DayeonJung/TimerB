@@ -13,25 +13,25 @@ protocol TimerViewModelProtocol {
     var currentTime: Int { get }
     var timeDidChage: ((Int) -> ())? { get set }
     var playerDidChange: ((PlayerInfo) -> ())? { get set }
-    func timeIsGoing()
     func clickedNextPlayer()
+    func getMaxTime() -> Int
 }
 
 class TimerViewModel: TimerViewModelProtocol {
 
-    private var maxTime: Int
+    var playerInfo: [PlayerInfo]
+
+    private let maxTime: Int
     var currentTime: Int {
         didSet {
             self.timeDidChage?(self.currentTime)
         }
     }
-    
-    var playerInfo: [PlayerInfo]
-    
+        
     private var timer: Timer?
     var timeDidChage: ((Int) -> ())?
 
-    var currentPlayerIdx: Int = 0 {
+    private var currentPlayerIdx: Int = 0 {
         didSet {
             self.currentTime = self.maxTime
             self.playerDidChange?(self.playerInfo[self.currentPlayerIdx])
@@ -54,7 +54,7 @@ class TimerViewModel: TimerViewModelProtocol {
         
     }
 
-    @objc func timeIsGoing() {
+    @objc private func timeIsGoing() {
         
         let nextTime = self.currentTime - 1
         
@@ -69,5 +69,9 @@ class TimerViewModel: TimerViewModelProtocol {
     func clickedNextPlayer() {
         let idx = self.currentPlayerIdx + 1
         self.currentPlayerIdx = idx >= self.playerInfo.count ? 0 : idx
+    }
+    
+    func getMaxTime() -> Int {
+        return self.maxTime
     }
 }

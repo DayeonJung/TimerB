@@ -49,7 +49,8 @@ class TimerViewController: UIViewController {
                                                y: 0,
                                                width: UIScreen.main.bounds.width,
                                                height: UIScreen.main.bounds.height),
-                                 bgColor: self.timerViewModel?.playerInfo.first?.color ?? UIColor.white)
+                                 bgColor: self.timerViewModel?.playerInfo.first?.color ?? UIColor.white,
+                                 maxTime: self.timerViewModel?.getMaxTime() ?? 99)
         
         self.view.insertSubview(self.waveView, at: 0)
         

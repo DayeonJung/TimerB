@@ -30,17 +30,19 @@ class WaveView: UIView, CAAnimationDelegate {
     private var backWaveLayer = CAShapeLayer()
 
     
-    
-    private var zeroYPoint: CGFloat = 0
-    private var amplitude: CGFloat = 13
-    private var drawPeriod: Double = 0.002
+    private var zeroYPoint: CGFloat = 0     // 물결의 기준 y좌표
+    private var amplitude: CGFloat = 13     // 위아래로 얼만큼 출렁일 것인가
+    private var drawPeriod: Double = 0.002  // Layer를 몇초에 한 번 랜더링할 것인가
+    private var heightPeriod: Double = 0    // drawPeriod동안 내려갈 wave의 길이
     
     private var timer = Timer()
     
 
-    required init(frame: CGRect, bgColor: UIColor) {
+    required init(frame: CGRect, bgColor: UIColor, maxTime: Int) {
         super.init(frame: frame)
         self.bgColor = bgColor
+        
+        self.heightPeriod = Double(self.height)/(Double(maxTime)/self.drawPeriod)
         self.commoninit()
     }
     
@@ -144,7 +146,7 @@ class WaveView: UIView, CAAnimationDelegate {
                 self.width :
                 point.x
                 
-            yToMove += 0.05
+            yToMove += CGFloat(self.heightPeriod)
             return CGPoint(x: xToMove, y: yToMove)
         })
         
