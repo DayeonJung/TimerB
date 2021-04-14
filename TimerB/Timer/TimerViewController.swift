@@ -54,11 +54,11 @@ class TimerViewController: UIViewController {
         
         self.view.insertSubview(self.waveView, at: 0)
         
-        self.waveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.shouldGoNextPlayer)))
+        self.waveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didClickBackground)))
     }
 
-    @objc func shouldGoNextPlayer() {
-        self.timerViewModel?.clickedNextPlayer()
+    @objc func didClickBackground() {
+        self.timerViewModel?.shouldGoToNextPlayer()
     }
     
     
