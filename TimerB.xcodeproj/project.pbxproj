@@ -10,6 +10,7 @@
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
+		B47233232626DC6100B85B0E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47233222626DC6100B85B0E /* RoundedView.swift */; };
 		B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FF095261F24AE0079BC74 /* TimerViewController.swift */; };
 		B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47FF099261F25B10079BC74 /* Storyboard.swift */; };
 		B4824914261B5B5600D07969 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824913261B5B5600D07969 /* TitleButton.swift */; };
@@ -36,6 +37,7 @@
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
+		B47233222626DC6100B85B0E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		B47FF095261F24AE0079BC74 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B47FF099261F25B10079BC74 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		B4824913261B5B5600D07969 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
@@ -71,6 +73,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B472331E2626DBBF00B85B0E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				B4824913261B5B5600D07969 /* TitleButton.swift */,
+				B4A255F326199C95002DEBC7 /* IconButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		B47233202626DBCB00B85B0E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
+				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
+				B419B53A2621606B00258796 /* WaveView.swift */,
+				B47233222626DC6100B85B0E /* RoundedView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B47FF094261F24850079BC74 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,11 +160,8 @@
 		B4A255EC26199711002DEBC7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				B4824913261B5B5600D07969 /* TitleButton.swift */,
-				B4A255F326199C95002DEBC7 /* IconButton.swift */,
-				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
-				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
-				B419B53A2621606B00258796 /* WaveView.swift */,
+				B472331E2626DBBF00B85B0E /* Button */,
+				B47233202626DBCB00B85B0E /* View */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -238,6 +257,7 @@
 				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
+				B47233232626DC6100B85B0E /* RoundedView.swift in Sources */,
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
 				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,

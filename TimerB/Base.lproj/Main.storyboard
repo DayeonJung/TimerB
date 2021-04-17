@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6mm-4m-i3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="683" y="114"/>
+            <point key="canvasLocation" x="682.60869565217399" y="113.83928571428571"/>
         </scene>
         <!--Timer View Controller-->
         <scene sceneID="Lnj-c1-yy1">
@@ -92,26 +92,76 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSy-jb-pqm" customClass="RoundedView" customModule="TimerB" customModuleProvider="target">
+                                <rect key="frame" x="20" y="794" width="374" height="60"/>
+                                <color key="backgroundColor" name="Card_Background"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="aaN-7R-RJb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="i2J-GE-NOx"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4K0-Ru-aQd" customClass="RoundedView" customModule="TimerB" customModuleProvider="target">
+                                <rect key="frame" x="171" y="766" width="72" height="72"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zJx-Ud-t8H" customClass="IconButton" customModule="TimerB" customModuleProvider="target">
+                                        <rect key="frame" x="6" y="6" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Ma4-4B-73I"/>
+                                            <constraint firstAttribute="width" constant="60" id="Zkg-gt-XVX"/>
+                                        </constraints>
+                                        <color key="tintColor" name="Background"/>
+                                        <state key="normal" image="play.fill" catalog="system"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="Background"/>
+                                <constraints>
+                                    <constraint firstItem="zJx-Ud-t8H" firstAttribute="centerX" secondItem="4K0-Ru-aQd" secondAttribute="centerX" id="QdS-pg-Hpa"/>
+                                    <constraint firstItem="zJx-Ud-t8H" firstAttribute="centerY" secondItem="4K0-Ru-aQd" secondAttribute="centerY" id="XfC-K6-45a"/>
+                                    <constraint firstAttribute="height" constant="72" id="ZDc-P6-dpx"/>
+                                    <constraint firstAttribute="width" constant="72" id="pSQ-7A-fZo"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="34"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ezh-CA-Nky"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="4K0-Ru-aQd" firstAttribute="centerX" secondItem="Kn6-vY-TLu" secondAttribute="centerX" id="PfQ-EM-xif"/>
+                            <constraint firstItem="oSy-jb-pqm" firstAttribute="bottom" secondItem="4K0-Ru-aQd" secondAttribute="bottom" constant="16" id="S5i-4d-dbM"/>
+                            <constraint firstItem="Ezh-CA-Nky" firstAttribute="trailing" secondItem="oSy-jb-pqm" secondAttribute="trailing" constant="20" id="XXr-jo-6dd"/>
                             <constraint firstItem="lPz-Rj-coP" firstAttribute="centerX" secondItem="Kn6-vY-TLu" secondAttribute="centerX" id="b4t-MR-CG7"/>
+                            <constraint firstItem="oSy-jb-pqm" firstAttribute="bottom" secondItem="Ezh-CA-Nky" secondAttribute="bottom" constant="-8" id="bnO-Ta-IEw"/>
                             <constraint firstItem="lPz-Rj-coP" firstAttribute="top" secondItem="Ezh-CA-Nky" secondAttribute="top" constant="108" id="om4-TL-9gz"/>
+                            <constraint firstItem="oSy-jb-pqm" firstAttribute="leading" secondItem="Ezh-CA-Nky" secondAttribute="leading" constant="20" id="tPG-hi-Rkz"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="playButton" destination="zJx-Ud-t8H" id="Arh-e1-6bK"/>
                         <outlet property="timeLabel" destination="lPz-Rj-coP" id="bhj-7P-9Ss"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iu5-cS-Wh1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="114"/>
+            <point key="canvasLocation" x="1408.6956521739132" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="zJx-Ud-t8H">
+            <size key="intrinsicContentSize" width="15" height="22"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <namedColor name="Background">
-            <color red="0.066666666666666666" green="0.066666666666666666" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.067000001668930054" green="0.067000001668930054" blue="0.067000001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Card_Background">
+            <color red="0.17299999296665192" green="0.17299999296665192" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

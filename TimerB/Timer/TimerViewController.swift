@@ -16,32 +16,36 @@ class TimerViewController: UIViewController {
                 self.timeLabel.text = String(time)
             }
             
-            self.timerViewModel?.playerDidChange = { (player) in
+            self.timerViewModel?.playerDidChange = { player in
                 self.waveView.shouldInit(with: player.color)
             }
             
+            self.timerViewModel?.timerStop = { state in
+                self.waveView.shouldStop = state
+            }
         }
     }
     
 
     
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var playButton: IconButton!
     
     var waveView: WaveView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
         
         self.initWaveView()
-        
+        self.setBottomButtonsUI()
         
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         // Timer 해제
-        self.waveView.stopAnimation()
+        self.timerViewModel?.shouldStop = true
     }
     
     private func initWaveView() {
@@ -57,9 +61,18 @@ class TimerViewController: UIViewController {
         self.waveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didClickBackground)))
     }
 
-    @objc func didClickBackground() {
+    @objc private func didClickBackground() {
         self.timerViewModel?.shouldGoToNextPlayer()
     }
     
+
+    private func setBottomButtonsUI() {
+        self.playButton.setModel(with: IconButtonModel(imageName: .Play, bgColor: .white, tintColor: UIColor(named: "Background")!))
+        
+        self.playButton.onClick = {
+            let state = self.timerViewModel?.shouldStop ?? false
+            self.timerViewModel?.shouldStop = !state
+        }
+    }
     
 }

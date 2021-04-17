@@ -37,6 +37,12 @@ class WaveView: UIView, CAAnimationDelegate {
     
     private var timer = Timer()
     
+    var shouldStop: Bool = false {
+        didSet {
+            if self.shouldStop { self.stopAnimation() }
+            else { self.startAnimation() }
+        }
+    }
 
     required init(frame: CGRect, bgColor: UIColor, maxTime: Int) {
         super.init(frame: frame)
@@ -105,7 +111,7 @@ class WaveView: UIView, CAAnimationDelegate {
                                           repeats: true)
     }
     
-    func stopAnimation() {
+    private func stopAnimation() {
         self.timer.invalidate()
     }
     

@@ -8,8 +8,22 @@
 import Foundation
 import UIKit
 
+enum Icon: String {
+    case Plus = "plus"
+    case Minus = "minus"
+    case Play = "play.fill"
+}
+
 struct IconButtonModel {
-    let imageName: String
+    let imageName: Icon
+    let bgColor: UIColor
+    let tintColor: UIColor
+    
+    init(imageName: Icon, bgColor: UIColor = .black, tintColor: UIColor = .white) {
+        self.imageName = imageName
+        self.bgColor = bgColor
+        self.tintColor = tintColor
+    }
 }
 
 @IBDesignable
@@ -56,8 +70,11 @@ class IconButton: UIButton {
     private func setUI() {
         
         if let icon = self.viewModel?.imageName {
-            self.setImage(UIImage(systemName: icon), for: .normal)
+            self.setImage(UIImage(systemName: icon.rawValue), for: .normal)
         }
+        
+        self.backgroundColor = self.viewModel?.bgColor
+        self.tintColor = self.viewModel?.tintColor
         
     }
     

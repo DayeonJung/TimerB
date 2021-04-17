@@ -64,8 +64,8 @@ class OptionControl: UIView {
          superView.frame = self.bounds
          superView.layoutIfNeeded()
          
-        self.minusButton.setModel(with: IconButtonModel(imageName: "minus"))
-        self.plusButton.setModel(with: IconButtonModel(imageName: "plus"))
+        self.minusButton.setModel(with: IconButtonModel(imageName: .Minus))
+        self.plusButton.setModel(with: IconButtonModel(imageName: .Plus))
      }
     
     func setViewModel(with viewModel: OptionModel) {

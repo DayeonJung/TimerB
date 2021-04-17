@@ -13,11 +13,14 @@ protocol TimerViewModelProtocol {
     var currentTime: Int { get }
     var timeDidChage: ((Int) -> ())? { get set }
     var playerDidChange: ((PlayerInfo) -> ())? { get set }
+    var shouldStop: Bool { get set }
+    var timerStop: ((Bool) -> ())? { get set }
     func shouldGoToNextPlayer()
     func getMaxTime() -> Int
 }
 
 class TimerViewModel: TimerViewModelProtocol {
+    
 
     var playerInfo: [PlayerInfo]
 
@@ -28,8 +31,23 @@ class TimerViewModel: TimerViewModelProtocol {
         }
     }
         
-    private var timer: Timer?
+    private var timer = Timer()
     var timeDidChage: ((Int) -> ())?
+    var timerStop: ((Bool) -> ())?
+
+    
+    var shouldStop: Bool = false {
+        didSet {
+            if self.shouldStop {
+                self.stopTimer()
+            } else {
+                self.startTimer()
+            }
+            
+            self.timerStop?(self.shouldStop)
+        }
+    }
+    
 
     private var currentPlayerIdx: Int = 0 {
         didSet {
@@ -45,13 +63,19 @@ class TimerViewModel: TimerViewModelProtocol {
         self.currentTime = time
         self.playerInfo = player
         
+        self.startTimer()
+    }
+    
+    private func startTimer() {
         self.timer = Timer.scheduledTimer(timeInterval: 1.0,
                                           target: self,
                                           selector: #selector(timeIsGoing),
                                           userInfo: nil,
                                           repeats: true)
-        
-        
+    }
+    
+    private func stopTimer() {
+        self.timer.invalidate()
     }
 
     @objc private func timeIsGoing() {
