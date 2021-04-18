@@ -21,6 +21,8 @@ class TimerViewController: UIViewController {
             }
             
             self.timerViewModel?.timerStop = { state in
+                let iconName = state ? Icon.Play.rawValue : Icon.Pause.rawValue
+                self.playButton.setImage(UIImage(systemName: iconName), for: .normal)
                 self.waveView.shouldStop = state
             }
         }
@@ -62,17 +64,28 @@ class TimerViewController: UIViewController {
     }
 
     @objc private func didClickBackground() {
-        self.timerViewModel?.shouldGoToNextPlayer()
+        self.timerViewModel?.shouldGoToNextPlayer(to: .Next)
     }
     
 
     private func setBottomButtonsUI() {
-        self.playButton.setModel(with: IconButtonModel(imageName: .Play, bgColor: .white, tintColor: UIColor(named: "Background")!))
+        self.playButton.setModel(with: IconButtonModel(imageName: .Pause,
+                                                       bgColor: .white,
+                                                       tintColor: UIColor(named: "Background")!))
         
         self.playButton.onClick = {
             let state = self.timerViewModel?.shouldStop ?? false
             self.timerViewModel?.shouldStop = !state
         }
+        
+        
     }
+    
+    @IBAction func didTapChangePlayer(_ sender: UIButton) {
+        
+        self.timerViewModel?.shouldGoToNextPlayer(to: sender.tag == 0 ? .Back : .Next)
+        
+    }
+    
     
 }

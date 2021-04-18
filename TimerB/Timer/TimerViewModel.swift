@@ -8,6 +8,11 @@
 import Foundation
 import UIKit
 
+enum Direction {
+    case Next
+    case Back
+}
+
 protocol TimerViewModelProtocol {
     var playerInfo: [PlayerInfo] { get set }
     var currentTime: Int { get }
@@ -15,7 +20,7 @@ protocol TimerViewModelProtocol {
     var playerDidChange: ((PlayerInfo) -> ())? { get set }
     var shouldStop: Bool { get set }
     var timerStop: ((Bool) -> ())? { get set }
-    func shouldGoToNextPlayer()
+    func shouldGoToNextPlayer(to: Direction)
     func getMaxTime() -> Int
 }
 
@@ -84,16 +89,27 @@ class TimerViewModel: TimerViewModelProtocol {
         
         if nextTime <= 0 {
             self.currentTime = self.maxTime
-            self.shouldGoToNextPlayer()
+            self.shouldGoToNextPlayer(to: .Next)
         } else {
             self.currentTime = nextTime
         }
 
     }
     
-    func shouldGoToNextPlayer() {
-        let idx = self.currentPlayerIdx + 1
-        self.currentPlayerIdx = idx >= self.playerInfo.count ? 0 : idx
+    func shouldGoToNextPlayer(to: Direction) {
+        
+        var idx = self.currentPlayerIdx
+        
+        switch to {
+        case .Next:
+            idx += 1
+            self.currentPlayerIdx = idx >= self.playerInfo.count ? 0 : idx
+
+        case .Back:
+            idx -= 1
+            self.currentPlayerIdx = idx < 0 ? self.playerInfo.count - 1 : idx
+        }
+
     }
     
     func getMaxTime() -> Int {

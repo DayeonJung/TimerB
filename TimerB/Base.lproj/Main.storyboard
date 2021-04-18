@@ -94,9 +94,43 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSy-jb-pqm" customClass="RoundedView" customModule="TimerB" customModuleProvider="target">
                                 <rect key="frame" x="20" y="794" width="374" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qb0-BT-aI2">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="bk0-GX-K7J"/>
+                                            <constraint firstAttribute="width" constant="100" id="yzQ-BO-ftw"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="28" minY="22" maxX="56" maxY="22"/>
+                                        <state key="normal" image="previous"/>
+                                        <connections>
+                                            <action selector="didTapChangePlayer:" destination="zVI-0N-DUb" eventType="touchUpInside" id="bC3-IN-SNi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0UZ-jk-Kf8">
+                                        <rect key="frame" x="274" y="0.0" width="100" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="4C6-Kf-N7o"/>
+                                            <constraint firstAttribute="height" constant="60" id="fDK-E9-mMz"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="56" minY="22" maxX="28" maxY="22"/>
+                                        <state key="normal" image="next"/>
+                                        <connections>
+                                            <action selector="didTapChangePlayer:" destination="zVI-0N-DUb" eventType="touchUpInside" id="yly-B9-6Gb"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" name="Card_Background"/>
                                 <constraints>
+                                    <constraint firstItem="Qb0-BT-aI2" firstAttribute="leading" secondItem="oSy-jb-pqm" secondAttribute="leading" id="5aO-9w-AV8"/>
+                                    <constraint firstItem="Qb0-BT-aI2" firstAttribute="centerY" secondItem="oSy-jb-pqm" secondAttribute="centerY" id="Bux-pj-kVY"/>
+                                    <constraint firstAttribute="trailing" secondItem="0UZ-jk-Kf8" secondAttribute="trailing" id="JaF-Ea-H1T"/>
                                     <constraint firstAttribute="height" constant="60" id="aaN-7R-RJb"/>
+                                    <constraint firstItem="0UZ-jk-Kf8" firstAttribute="centerY" secondItem="oSy-jb-pqm" secondAttribute="centerY" id="bZY-P5-zzy"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="i2J-GE-NOx"/>
                                 </constraints>
                             </view>
@@ -111,7 +145,10 @@
                                             <constraint firstAttribute="width" constant="60" id="Zkg-gt-XVX"/>
                                         </constraints>
                                         <color key="tintColor" name="Background"/>
-                                        <state key="normal" image="play.fill" catalog="system"/>
+                                        <inset key="imageEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" image="pause.fill" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="Background"/>
@@ -152,11 +189,13 @@
     </scenes>
     <designables>
         <designable name="zJx-Ud-t8H">
-            <size key="intrinsicContentSize" width="15" height="22"/>
+            <size key="intrinsicContentSize" width="17" height="22"/>
         </designable>
     </designables>
     <resources>
-        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <image name="next" width="512" height="512"/>
+        <image name="pause.fill" catalog="system" width="116" height="128"/>
+        <image name="previous" width="512" height="512"/>
         <namedColor name="Background">
             <color red="0.067000001668930054" green="0.067000001668930054" blue="0.067000001668930054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -12,6 +12,7 @@ enum Icon: String {
     case Plus = "plus"
     case Minus = "minus"
     case Play = "play.fill"
+    case Pause = "pause.fill"
 }
 
 struct IconButtonModel {
