@@ -48,17 +48,26 @@ class SelectOptionCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
         
+
         self.optionView.plusButton.onClick = {
+            
             let original = self.viewModel.option.currentValue()
-            if original < 99 {
-                self.viewModel.setNumber(with: original + 1)
+            let unit = self.viewModel.option.currentType() == .Player ? 1 : 5
+
+            let maxNum = self.viewModel.option.currentType() == .Player ? 9 : 99
+            
+            if original < maxNum {
+                self.viewModel.setNumber(with: min(original + unit, 99))
             }
         }
         
         self.optionView.minusButton.onClick = {
+            
             let original = self.viewModel.option.currentValue()
+            let unit = self.viewModel.option.currentType() == .Player ? 1 : 5
+
             if original >= 1 {
-                self.viewModel.setNumber(with: original - 1)
+                self.viewModel.setNumber(with: max(original - unit, 1))
             }
         }
         

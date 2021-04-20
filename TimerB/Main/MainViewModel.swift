@@ -26,10 +26,10 @@ class MainViewModel {
     init() {
         self.sections = [.SetOptions]
         self.options = [
-            SelectOptionViewModel(model: OptionModel(type: .Player,
-                                                     value: 2)),
             SelectOptionViewModel(model: OptionModel(type: .Time,
-                                                     value: 99))
+                                                     value: 30)),
+            SelectOptionViewModel(model: OptionModel(type: .Player,
+                                                     value: 4))
         ]
     }
     
@@ -41,7 +41,7 @@ class MainViewModel {
         let playerNum = self.optionInfo(with: .Player).option.currentValue()
         
         let playerInfos = Array(0..<playerNum).map({ num -> PlayerInfo in
-            return PlayerInfo(color: self.colorSet[num], name: "player" + String(num + 1))
+            return PlayerInfo(color: self.colorSet[num], name: "player " + String(num + 1))
         })
 
         return TimerViewModel(time: self.optionInfo(with: .Time).option.currentValue(),
