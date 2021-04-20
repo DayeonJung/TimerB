@@ -14,6 +14,7 @@ class TimerViewController: UIViewController {
             
             self.timerViewModel?.timeDidChage = { time in
                 self.timeLabel.text = String(time)
+                self.timeLabel.textColor = time <= 3 ? .systemRed : .white
             }
             
             self.timerViewModel?.playerDidChange = { player in
