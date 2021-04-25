@@ -10,7 +10,8 @@ import UIKit
 
 class SettingView: UIView {
 
-    private var blurView = BlurEffectView()
+    @IBOutlet weak var blurView: BlurEffectView!
+    @IBOutlet weak var noticeContainer: UIView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,8 +29,7 @@ class SettingView: UIView {
         superView.frame = self.bounds
         superView.layoutIfNeeded()
         
-        self.blurView.frame = self.bounds
-        self.addSubview(self.blurView)
+        self.noticeContainer.alpha = 0
         
     }
     
@@ -37,5 +37,16 @@ class SettingView: UIView {
         // alpha 0 : 원래색
         // alpha 1 : 투명해짐
         self.blurView.animator.fractionComplete = alpha
+        
+        if alpha > 0.5 && self.noticeContainer.alpha == 0 {
+
+            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+                self.noticeContainer.alpha = 1
+                self.noticeContainer.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }
+        }
+        
     }
+    
+    
 }
