@@ -34,28 +34,37 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: IconButton!
     
-    var waveView: WaveView!
 
+    var waveView: WaveView!
+    
+    
+    var settingTopView: SettingTopView!
+    var settingView: SettingView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
         
+        self.initSettingView()
         self.initWaveView()
         self.setBottomButtonsUI()
         
     }
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         // Timer 해제
         self.timerViewModel?.shouldStop = true
     }
     
+    
     private func initWaveView() {
         self.waveView = WaveView(frame: CGRect(x: 0,
                                                y: 0,
-                                               width: UIScreen.main.bounds.width,
-                                               height: UIScreen.main.bounds.height),
+                                               width: .mainWidth,
+                                               height: .mainHeight),
                                  bgColor: self.timerViewModel?.playerInfo.first?.color ?? UIColor.white,
                                  maxTime: self.timerViewModel?.getMaxTime() ?? 99)
         
@@ -63,16 +72,88 @@ class TimerViewController: UIViewController {
         
         self.waveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didClickBackground)))
     }
-
+    
     @objc private func didClickBackground() {
         self.timerViewModel?.shouldGoToNextPlayer(to: .Next)
     }
     
+    
+    private func initSettingView() {
+        
+        let initialSize = CGSize(width: .mainWidth - 40, height: 60)
+        self.settingTopView = SettingTopView(frame: CGRect(x: .mainWidth - 62,
+                                                           y: 40,
+                                                           width: initialSize.width,
+                                                           height: initialSize.height),
+                                             radius: initialSize.height/2,
+                                             bgColor: UIColor.cardBackground)
+        self.settingTopView.addGestureRecognizer(UIPanGestureRecognizer(target: self,
+                                                         action: #selector(self.didPanSettingView)))
+        
+    }
+    
+    @objc private func didPanSettingView(_ sender: UIPanGestureRecognizer) {
+        
+        let transition = sender.translation(in: self.settingTopView)
+        let changedX = self.settingTopView.center.x + transition.x
+        let maintainingY = self.settingTopView.center.y
+        
+        self.settingTopView.setCenter(to: CGPoint(x: changedX, y: maintainingY))
+        
+        sender.setTranslation(.zero, in: self.settingTopView)
+
+        
+        switch sender.state {
+        case .began:
+            self.settingView = SettingView(frame: CGRect(x: 0,
+                                                         y: 0,
+                                                         width: .mainWidth,
+                                                         height: .mainHeight))
+            self.view.addSubview(self.settingView!)
+
+            self.settingView?.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                                          action: #selector(self.didTapSettingView)))
+            
+            break
+        case .changed:
+            let maxX: CGFloat = .mainWidth - 62
+            let changedAmount = maxX - self.settingTopView.frame.minX
+            let intensity = min(changedAmount * 10, maxX)/maxX
+            self.settingView?.adjustAlphaOfBlurView(alpha: intensity)
+            break
+        case .ended:
+            UIView.animate(withDuration: 0.4) {
+                self.settingTopView.backgroundColor = .background
+                self.settingTopView.setCenter(to: CGPoint(x: .mainWidth/2, y: maintainingY))
+            }
+            
+            break
+        default:
+            break
+        }
+        
+    }
+    
+    @objc private func didTapSettingView() {
+        
+        guard let setting = self.settingView else { return }
+        
+        UIView.animate(withDuration: 0.4) {
+            setting.alpha = 0
+            self.settingTopView.frame = CGRect(x: .mainWidth - 62,
+                                               y: self.settingTopView.frame.minY,
+                                               width: self.settingTopView.frame.width,
+                                               height: self.settingTopView.frame.height)
+            self.settingTopView.backgroundColor = .cardBackground
+        } completion: { _ in
+            setting.removeFromSuperview()
+        }
+    }
 
     private func setBottomButtonsUI() {
         self.playButton.setModel(with: IconButtonModel(imageName: .Pause,
                                                        bgColor: .white,
-                                                       tintColor: UIColor(named: "Background")!))
+                                                       tintColor: UIColor.background))
         
         self.playButton.onClick = {
             let state = self.timerViewModel?.shouldStop ?? false
@@ -81,6 +162,7 @@ class TimerViewController: UIViewController {
         
         
     }
+    
     
     @IBAction func didTapChangePlayer(_ sender: UIButton) {
         

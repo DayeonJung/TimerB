@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
+		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
@@ -17,6 +19,11 @@
 		B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824916261B5FBE00D07969 /* StartGameCell.swift */; };
 		B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4824917261B5FBE00D07969 /* StartGameCell.xib */; };
 		B482491C261B61AB00D07969 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482491B261B61AB00D07969 /* Color.xcassets */; };
+		B48CFB842635C316004EDA66 /* BlurEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CFB832635C316004EDA66 /* BlurEffectView.swift */; };
+		B48D297C26356BB6003AC9A1 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D297B26356BB6003AC9A1 /* SettingViewModel.swift */; };
+		B48D297F26356E33003AC9A1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D297E26356E33003AC9A1 /* SettingView.swift */; };
+		B48D2982263570D4003AC9A1 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D2981263570D4003AC9A1 /* SettingTopView.swift */; };
+		B48D29862635801B003AC9A1 /* SettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48D29852635801B003AC9A1 /* SettingView.xib */; };
 		B4A08DC32619B39300F46CD9 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A08DC22619B39300F46CD9 /* List.swift */; };
 		B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CB26198E18002DEBC7 /* AppDelegate.swift */; };
 		B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */; };
@@ -34,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
@@ -44,6 +53,11 @@
 		B4824916261B5FBE00D07969 /* StartGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCell.swift; sourceTree = "<group>"; };
 		B4824917261B5FBE00D07969 /* StartGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartGameCell.xib; sourceTree = "<group>"; };
 		B482491B261B61AB00D07969 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		B48CFB832635C316004EDA66 /* BlurEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffectView.swift; sourceTree = "<group>"; };
+		B48D297B26356BB6003AC9A1 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		B48D297E26356E33003AC9A1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		B48D2981263570D4003AC9A1 /* SettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTopView.swift; sourceTree = "<group>"; };
+		B48D29852635801B003AC9A1 /* SettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingView.xib; sourceTree = "<group>"; };
 		B4A08DC22619B39300F46CD9 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		B4A255C826198E18002DEBC7 /* TimerB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A255CB26198E18002DEBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,10 +99,10 @@
 		B47233202626DBCB00B85B0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B47233222626DC6100B85B0E /* RoundedView.swift */,
 				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
 				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
 				B419B53A2621606B00258796 /* WaveView.swift */,
-				B47233222626DC6100B85B0E /* RoundedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -103,11 +117,32 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
+		B48CFB822635C2FE004EDA66 /* Visual Effect */ = {
+			isa = PBXGroup;
+			children = (
+				B48CFB832635C316004EDA66 /* BlurEffectView.swift */,
+			);
+			path = "Visual Effect";
+			sourceTree = "<group>";
+		};
+		B48D297A26356A47003AC9A1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				B48D2981263570D4003AC9A1 /* SettingTopView.swift */,
+				B48D297B26356BB6003AC9A1 /* SettingViewModel.swift */,
+				B48D297E26356E33003AC9A1 /* SettingView.swift */,
+				B48D29852635801B003AC9A1 /* SettingView.xib */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
 		B4A08DC12619B37600F46CD9 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				B4A08DC22619B39300F46CD9 /* List.swift */,
 				B47FF099261F25B10079BC74 /* Storyboard.swift */,
+				B4178B952634133A004ABD79 /* Color.swift */,
+				B4178B98263417F1004ABD79 /* CGFloat.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -135,6 +170,7 @@
 				B4A255EC26199711002DEBC7 /* Custom */,
 				B4A255E0261992CC002DEBC7 /* Main */,
 				B47FF094261F24850079BC74 /* Timer */,
+				B48D297A26356A47003AC9A1 /* Setting */,
 				B4A255CB26198E18002DEBC7 /* AppDelegate.swift */,
 				B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */,
 				B4A255D126198E18002DEBC7 /* Main.storyboard */,
@@ -160,6 +196,7 @@
 		B4A255EC26199711002DEBC7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				B48CFB822635C2FE004EDA66 /* Visual Effect */,
 				B472331E2626DBBF00B85B0E /* Button */,
 				B47233202626DBCB00B85B0E /* View */,
 			);
@@ -235,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
+				B48D29862635801B003AC9A1 /* SettingView.xib in Resources */,
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
@@ -254,20 +292,26 @@
 				B4D653B4261F2959009D81F4 /* TimerViewModel.swift in Sources */,
 				B4A255E626199456002DEBC7 /* MainViewModel.swift in Sources */,
 				B4A255E2261993A2002DEBC7 /* MainModel.swift in Sources */,
+				B48D297F26356E33003AC9A1 /* SettingView.swift in Sources */,
 				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
+				B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
 				B47233232626DC6100B85B0E /* RoundedView.swift in Sources */,
+				B48D2982263570D4003AC9A1 /* SettingTopView.swift in Sources */,
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
 				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
+				B48CFB842635C316004EDA66 /* BlurEffectView.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,
 				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
 				B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */,
 				B4824914261B5B5600D07969 /* TitleButton.swift in Sources */,
+				B48D297C26356BB6003AC9A1 /* SettingViewModel.swift in Sources */,
 				B4D653BA261F2E53009D81F4 /* TimerModel.swift in Sources */,
 				B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */,
 				B4A08DC32619B39300F46CD9 /* List.swift in Sources */,
+				B4178B962634133A004ABD79 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
