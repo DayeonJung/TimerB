@@ -34,19 +34,27 @@ class SettingView: UIView {
     }
     
     func adjustAlphaOfBlurView(alpha: CGFloat) {
-        // alpha 0 : 원래색
-        // alpha 1 : 투명해짐
+
         self.blurView.animator.fractionComplete = alpha
         
         if alpha > 0.5 && self.noticeContainer.alpha == 0 {
-
-            UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
-                self.noticeContainer.alpha = 1
-                self.noticeContainer.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            }
+            self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
+        } else if alpha <= 0.5 {
+            self.animateNoticeContainer(alpha: 0, transform: (1.0, 1.0))
         }
         
     }
     
+    private func animateNoticeContainer(alpha: CGFloat, transform: (CGFloat, CGFloat)) {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
+            self.noticeContainer.alpha = alpha
+            self.noticeContainer.transform = CGAffineTransform(scaleX: transform.0, y: transform.1)
+        }
+    }
+    
+    func setOpenedViewUI() {
+        self.blurView.animator.fractionComplete = 1
+        self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
+    }
     
 }

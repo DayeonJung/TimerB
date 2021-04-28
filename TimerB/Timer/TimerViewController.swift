@@ -38,8 +38,9 @@ class TimerViewController: UIViewController {
     var waveView: WaveView!
     
     
-    var settingTopView: SettingTopView!
     var settingView: SettingView?
+    var settingTopView: SettingTopView!
+    let initialXSettingTop: CGFloat = .mainWidth - 62
     
     
     override func viewDidLoad() {
@@ -47,7 +48,7 @@ class TimerViewController: UIViewController {
         
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
         
-        self.initSettingView()
+        self.initSettingTopView()
         self.initWaveView()
         self.setBottomButtonsUI()
         
@@ -78,10 +79,10 @@ class TimerViewController: UIViewController {
     }
     
     
-    private func initSettingView() {
+    private func initSettingTopView() {
         
         let initialSize = CGSize(width: .mainWidth - 40, height: 60)
-        self.settingTopView = SettingTopView(frame: CGRect(x: .mainWidth - 62,
+        self.settingTopView = SettingTopView(frame: CGRect(x: self.initialXSettingTop,
                                                            y: 40,
                                                            width: initialSize.width,
                                                            height: initialSize.height),
@@ -101,7 +102,7 @@ class TimerViewController: UIViewController {
         self.settingTopView.setCenter(to: CGPoint(x: changedX, y: maintainingY))
         
         sender.setTranslation(.zero, in: self.settingTopView)
-
+        
         
         switch sender.state {
         case .began:
@@ -115,19 +116,30 @@ class TimerViewController: UIViewController {
                                                                           action: #selector(self.didTapSettingView)))
             
             break
-        case .changed:
-            let maxX: CGFloat = .mainWidth - 62
-            let changedAmount = maxX - self.settingTopView.frame.minX
-            let intensity = min(changedAmount * 10, maxX)/maxX
-            self.settingView?.adjustAlphaOfBlurView(alpha: intensity)
-            break
-        case .ended:
-            UIView.animate(withDuration: 0.4) {
-                self.settingTopView.backgroundColor = .background
-                self.settingTopView.setCenter(to: CGPoint(x: .mainWidth/2, y: maintainingY))
-            }
             
+        case .changed:
+            let changedAmount = self.initialXSettingTop - self.settingTopView.frame.minX
+            let intensity = min(changedAmount * 6, self.initialXSettingTop) / self.initialXSettingTop    // 0 < intensity <= 1
+
+            self.settingView?.adjustAlphaOfBlurView(alpha: intensity)
+            self.settingTopView.alpha = 1 - intensity
+
             break
+            
+        case .ended:
+            let changedAmount = self.initialXSettingTop - self.settingTopView.frame.minX
+            let intensity = min(changedAmount * 10, self.initialXSettingTop) / self.initialXSettingTop    // 0 < intensity <= 1
+
+            if intensity > 0.5 {
+                self.settingView?.setOpenedViewUI()
+                self.initSettingTopView(alpha: 0)
+            } else {
+                self.settingView?.removeFromSuperview()
+                self.initSettingTopView(alpha: 1)
+            }
+   
+            break
+            
         default:
             break
         }
@@ -139,15 +151,24 @@ class TimerViewController: UIViewController {
         guard let setting = self.settingView else { return }
         
         UIView.animate(withDuration: 0.4) {
+            
+            self.initSettingTopView(alpha: 1)
+            
+            self.settingView?.noticeContainer.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
             setting.alpha = 0
-            self.settingTopView.frame = CGRect(x: .mainWidth - 62,
-                                               y: self.settingTopView.frame.minY,
-                                               width: self.settingTopView.frame.width,
-                                               height: self.settingTopView.frame.height)
-            self.settingTopView.backgroundColor = .cardBackground
+            
         } completion: { _ in
             setting.removeFromSuperview()
         }
+        
+    }
+    
+    private func initSettingTopView(alpha: CGFloat) {
+        self.settingTopView.frame = CGRect(x: self.initialXSettingTop,
+                                           y: self.settingTopView.frame.minY,
+                                           width: self.settingTopView.frame.width,
+                                           height: self.settingTopView.frame.height)
+        self.settingTopView.alpha = alpha
     }
 
     private func setBottomButtonsUI() {
