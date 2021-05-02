@@ -12,6 +12,7 @@
                 <outlet property="minusButton" destination="T6u-El-9GX" id="wxR-b3-SQ1"/>
                 <outlet property="plusButton" destination="jtq-Sf-pTt" id="GUl-0g-dgD"/>
                 <outlet property="titleLable" destination="ujb-UM-xoK" id="ggg-iX-855"/>
+                <outlet property="valueButton" destination="GW9-eO-13o" id="F5z-QW-mR2"/>
                 <outlet property="valueLabel" destination="u4S-95-hSg" id="CLa-Rl-13l"/>
             </connections>
         </placeholder>
@@ -48,6 +49,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GW9-eO-13o">
+                    <rect key="frame" x="80" y="15" width="95" height="45"/>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,13 +59,17 @@
                 <constraint firstAttribute="bottom" secondItem="u4S-95-hSg" secondAttribute="bottom" id="03N-Np-cTd"/>
                 <constraint firstItem="u4S-95-hSg" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1gn-DK-yza"/>
                 <constraint firstAttribute="bottom" secondItem="jtq-Sf-pTt" secondAttribute="bottom" id="2KM-Dv-S1N"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="GW9-eO-13o" secondAttribute="bottom" id="9Lk-tX-caa"/>
                 <constraint firstItem="jtq-Sf-pTt" firstAttribute="leading" secondItem="T6u-El-9GX" secondAttribute="trailing" constant="175" id="BCS-Vs-p9c"/>
                 <constraint firstAttribute="top" secondItem="u4S-95-hSg" secondAttribute="top" constant="-22" id="BNc-jf-l6d"/>
+                <constraint firstItem="GW9-eO-13o" firstAttribute="leading" secondItem="T6u-El-9GX" secondAttribute="trailing" constant="40" id="N7N-ax-Kgm"/>
+                <constraint firstItem="GW9-eO-13o" firstAttribute="top" secondItem="ujb-UM-xoK" secondAttribute="bottom" id="NsD-jp-kIi"/>
                 <constraint firstItem="jtq-Sf-pTt" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="Ws6-Xq-2ph"/>
                 <constraint firstItem="T6u-El-9GX" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="ZKa-4g-CuT"/>
                 <constraint firstItem="ujb-UM-xoK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dJF-xN-UhC"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="T6u-El-9GX" secondAttribute="bottom" id="dZ9-AP-44d"/>
                 <constraint firstItem="ujb-UM-xoK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ikF-w6-2pe"/>
+                <constraint firstItem="jtq-Sf-pTt" firstAttribute="leading" secondItem="GW9-eO-13o" secondAttribute="trailing" constant="40" id="trd-Gg-HYF"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="252.89855072463769" y="-149.33035714285714"/>

@@ -10,6 +10,42 @@ import UIKit
 enum Option: String {
     case Time
     case Player
+    
+    var korean: String {
+        switch self {
+        case .Time:
+            return "시간"
+        case .Player:
+            return "인원 수"
+        }
+    }
+    
+    var maxNumber: Int {
+        switch self {
+        case .Time:
+            return 99
+        case .Player:
+            return 9
+        }
+    }
+    
+    var unit: Int {
+        switch self {
+        case .Time:
+            return 5
+        case .Player:
+            return 1
+        }
+    }
+    
+    var unitName: String {
+        switch self {
+        case .Time:
+            return "초"
+        case .Player:
+            return "명"
+        }
+    }
 }
 
 struct OptionModel {
@@ -47,6 +83,8 @@ class OptionControl: UIView {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var minusButton: IconButton!
     @IBOutlet weak var plusButton: IconButton!
+    @IBOutlet weak var valueButton: UIButton!
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
