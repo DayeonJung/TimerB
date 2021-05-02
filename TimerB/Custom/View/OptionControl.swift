@@ -80,7 +80,7 @@ class OptionControl: UIView {
     }
     
     @IBOutlet weak var titleLable: UILabel!
-    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var valueLabel: UnderlinedLabel!
     @IBOutlet weak var minusButton: IconButton!
     @IBOutlet weak var plusButton: IconButton!
     @IBOutlet weak var valueButton: UIButton!
