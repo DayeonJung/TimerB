@@ -10,7 +10,9 @@ import UIKit
 protocol OptionViewModelProtocol: class {
     var option: OptionModel { get }
     var valueDidChange: ((OptionViewModelProtocol) -> ())? { get set }
-    func setNumber(with number: Int)
+    var readyToShowAlertView: ((UIAlertController) -> ())? { get set }
+    func valueButtonClicked()
+   func setNumber(with number: Int)
 }
 
 class SelectOptionViewModel: OptionViewModelProtocol {
@@ -22,6 +24,8 @@ class SelectOptionViewModel: OptionViewModelProtocol {
     }
     
     var valueDidChange: ((OptionViewModelProtocol) -> ())?
+    var readyToShowAlertView: ((UIAlertController)->())?
+    
     
     required init(model: OptionModel) {
         self.option = model
@@ -30,6 +34,35 @@ class SelectOptionViewModel: OptionViewModelProtocol {
     func setNumber(with number: Int) {
         self.option.setValue(with: number)
     }
+    
+    func valueButtonClicked() {
+        let type = self.option.currentType()
+        let title = type.korean + "을(를) 입력해주세요."
+        let placeHolderMessage = String(1) + "~" + String(type.maxNumber) + type.unitName + " 입력 가능"
+        let alert = UIAlertController(title: title,
+                                      message: nil,
+                                      preferredStyle: .alert)
+        alert.addTextField { (tf) in
+            tf.keyboardType = .numberPad
+            tf.placeholder = placeHolderMessage
+        }
+        
+        let ok = UIAlertAction(title: "확인", style: .default) { (ok) in
+            
+            let originalValue = self.option.currentValue()
+            let input = alert.textFields?.first?.text ?? String(originalValue)
+            let number = min(Int(input) ?? originalValue, type.maxNumber)
+            self.setNumber(with: number)
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        self.readyToShowAlertView?(alert)
+    }
+    
 }
 
 class SelectOptionCell: UICollectionViewCell {
@@ -39,11 +72,17 @@ class SelectOptionCell: UICollectionViewCell {
             self.viewModel.valueDidChange = { vm in
                 self.optionView.setViewModel(with: vm.option)
             }
+            
+            self.viewModel.readyToShowAlertView = { alert in
+                self.passAlertViewToController?(alert)
+            }
         }
     }
     
     @IBOutlet weak var optionView: OptionControl!
-    var didClickValueButton: ((UIAlertController)->())?
+    
+    var passAlertViewToController: ((UIAlertController)->())?
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -70,39 +109,16 @@ class SelectOptionCell: UICollectionViewCell {
             }
         }
         
-        self.optionView.valueButton.addTarget(self, action: #selector(valueButtonClicked), for: .touchUpInside)
+        self.optionView.valueButton.addTarget(self,
+                                              action: #selector(self.didClickValueButton),
+                                              for: .touchUpInside)
         
     }
     
-    @objc private func valueButtonClicked() {
-        
-        let type = self.viewModel.option.currentType()
-        let title = type.korean + "을(를) 입력해주세요."
-        let placeHolderMessage = String(1) + "~" + String(type.maxNumber) + type.unitName + " 입력 가능"
-        let alert = UIAlertController(title: title,
-                                      message: nil,
-                                      preferredStyle: .alert)
-        alert.addTextField { (tf) in
-            tf.keyboardType = .numberPad
-            tf.placeholder = placeHolderMessage
-        }
-        
-        let ok = UIAlertAction(title: "확인", style: .default) { (ok) in
-            
-            let originalValue = self.viewModel.option.currentValue()
-            let input = alert.textFields?.first?.text ?? String(originalValue)
-            let number = min(Int(input) ?? originalValue, type.maxNumber)
-            self.viewModel.setNumber(with: number)
-        }
-        
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        
-        alert.addAction(cancel)
-        alert.addAction(ok)
-        
-        self.didClickValueButton?(alert)
-
+    @objc private func didClickValueButton() {
+        self.viewModel.valueButtonClicked()
     }
+
 
     func setViewModel(with vm: SelectOptionViewModel) {
         self.viewModel = vm
