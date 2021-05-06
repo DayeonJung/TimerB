@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FFB6BC2643800A00B1A671 /* SettingContentView.xib */; };
 		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
 		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B423816326428F5200D9E2B1 /* SettingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423816226428F5200D9E2B1 /* SettingContainerView.swift */; };
 		B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42381652642946A00D9E2B1 /* SettingContentView.swift */; };
 		B423844B2642E12200214582 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423844A2642E12200214582 /* SettingButtonView.swift */; };
-		B423844F2642EA4B00214582 /* SettingContentVIew.xib in Resources */ = {isa = PBXBuildFile; fileRef = B423844E2642EA4B00214582 /* SettingContentVIew.xib */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
 		B47233232626DC6100B85B0E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47233222626DC6100B85B0E /* RoundedView.swift */; };
@@ -45,13 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60FFB6BC2643800A00B1A671 /* SettingContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingContentView.xib; sourceTree = "<group>"; };
 		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B423816226428F5200D9E2B1 /* SettingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainerView.swift; sourceTree = "<group>"; };
 		B42381652642946A00D9E2B1 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
 		B423844A2642E12200214582 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
-		B423844E2642EA4B00214582 /* SettingContentVIew.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingContentVIew.xib; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
 		B47233222626DC6100B85B0E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 				B423816226428F5200D9E2B1 /* SettingContainerView.swift */,
 				B423844A2642E12200214582 /* SettingButtonView.swift */,
 				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
-				B423844E2642EA4B00214582 /* SettingContentVIew.xib */,
+				60FFB6BC2643800A00B1A671 /* SettingContentView.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -288,10 +288,10 @@
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
-				B423844F2642EA4B00214582 /* SettingContentVIew.xib in Resources */,
 				B482491C261B61AB00D07969 /* Color.xcassets in Resources */,
 				B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */,
 				B4A255D326198E18002DEBC7 /* Main.storyboard in Resources */,
+				60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

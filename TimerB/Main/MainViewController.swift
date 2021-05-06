@@ -21,7 +21,11 @@ class MainViewController: UIViewController {
         self.mainList.setCell(cellName: SelectOptionCell.self)
         self.mainList.setCell(cellName: StartGameCell.self)
         
-        self.settingContainer = SettingContainerView()
+        
+        self.settingContainer = SettingContainerView(frame: CGRect(origin: .zero,
+                                                                   size: CGSize(width: .mainWidth,
+                                                                                height: 100)))
+
     }
     
 

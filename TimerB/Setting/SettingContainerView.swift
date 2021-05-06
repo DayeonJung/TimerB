@@ -10,12 +10,16 @@ import UIKit
 class SettingContainerView: UIView {
 
     private var topView = SettingButtonView()
-    private var contentView: SettingContentView?
+    private var contentView = SettingContentView()
     
     private let initialFrameOfTopView = CGRect(x: .mainWidth - 62,
                                        y: 40,
                                        width: .mainWidth - 40,
                                        height: 60)
+    
+    private let fullFrame = CGRect(origin: .zero,
+                                   size: CGSize(width: .mainWidth,
+                                                height: .mainHeight))
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,14 +33,12 @@ class SettingContainerView: UIView {
     
     
     private func commoninit() {
-//        self.backgroundColor = .cyan
-//        self.contentView.frame = self.initialFrameOfTopView
         
-//        self.addSubview(self.contentView)
-//        self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-//        self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-//        self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-//        self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        self.addSubview(self.contentView)
+        self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         
         
         self.topView.frame = self.initialFrameOfTopView
