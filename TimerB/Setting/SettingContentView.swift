@@ -27,6 +27,12 @@ class SettingContentView: UIView {
         self.addSubview(superView)
         superView.frame = self.bounds
         superView.layoutIfNeeded()
+        
+    }
+    
+    
+    func setBlur(with value: CGFloat) {
+        self.blurView.animator.fractionComplete = value
     }
     
 }

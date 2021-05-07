@@ -9,13 +9,12 @@ import UIKit
 
 protocol ButtonViewProtocol {
     func didRecognizePanGesture(state: UIGestureRecognizer.State,
-                                intensity: CGFloat)
+                                transitionX: CGFloat)
 }
 
 class SettingButtonView: RoundedView {
 
     var delegate: ButtonViewProtocol?
-    private var initialFrame: CGRect = .zero
     
     required init(frame: CGRect? = nil,
                   radius: CGFloat? = nil,
@@ -43,11 +42,7 @@ class SettingButtonView: RoundedView {
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self,
                                                                  action: #selector(self.didPanSettingView)))
-        
         self.initSettingIcon()
-        
-        self.initialFrame = self.frame
-        
         
     }
 
@@ -63,37 +58,22 @@ class SettingButtonView: RoundedView {
     @objc func didPanSettingView(_ sender: UIPanGestureRecognizer) {
         
         let transition = sender.translation(in: self)
-        let changedX = self.center.x + transition.x
-        let maintainingY = self.center.y
-        
-        self.center = CGPoint(x: changedX, y: maintainingY)
         sender.setTranslation(.zero, in: self)
         
-        
-        let changedAmount = self.initialFrame.minX - self.frame.minX
-        let intensity = min(changedAmount * 10, self.initialFrame.minX) / self.initialFrame.minX    // 0 < intensity <= 1
-
-        
-        switch sender.state {
-        case .began:
-
-            break
-            
-        case .changed:
-
-            break
-            
-        case .ended:
-            
-
-            break
-            
-        default:
-            break
-        }
-        
         self.delegate?.didRecognizePanGesture(state: sender.state,
-                                              intensity: intensity)
+                                              transitionX: transition.x)
+        
+    }
+    
+    
+    func setCenter(with x: CGFloat) {
+        let changedX = self.center.x + x
+        let maintainingY = self.center.y
+        self.center = CGPoint(x: changedX, y: maintainingY)
+    }
+    
+    func setAlpha(with value: CGFloat) {
+        self.alpha = value
     }
     
 }

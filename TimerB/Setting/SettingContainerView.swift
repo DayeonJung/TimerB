@@ -12,7 +12,7 @@ class SettingContainerView: UIView {
     private var topView = SettingButtonView()
     private var contentView = SettingContentView()
     
-    private let initialFrameOfTopView = CGRect(x: .mainWidth - 62,
+    private let initialFrame = CGRect(x: .mainWidth - 62,
                                        y: 40,
                                        width: .mainWidth - 40,
                                        height: 60)
@@ -36,23 +36,20 @@ class SettingContainerView: UIView {
         didSet(oldValue) {
             let newFrame = UIView(frame: oldValue).convert(self.topView.frame, to: self)
             self.topView.frame = newFrame
-            print(newFrame)
+            
+            self.contentView.frame = self.bounds
         }
     }
     
     
     private func commoninit() {
-        self.backgroundColor = .yellow
+
         self.addSubview(self.contentView)
-        self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
-        self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        
-        
-        self.topView = SettingButtonView(frame: self.bounds,
-                                         radius: self.initialFrameOfTopView.height/2,
-                                         bgColor: .red)//.cardBackground
+        self.contentView.frame = self.bounds
+
+        self.topView.frame = self.bounds
+        self.topView.cornerRadius = self.initialFrame.height/2
+        self.topView.bgColor = .red//.cardBackground
         self.addSubview(self.topView)
         
         self.topView.delegate = self
@@ -63,7 +60,7 @@ class SettingContainerView: UIView {
         if keyWindow?.subviews.last?.isKind(of: SettingContainerView.self) == false {
             keyWindow?.addSubview(self)
         }
-        
+//        keyWindow?.rootViewController?.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
         
     }
 
@@ -72,8 +69,12 @@ class SettingContainerView: UIView {
 
 
 extension SettingContainerView: ButtonViewProtocol {
-    func didRecognizePanGesture(state: UIGestureRecognizer.State, intensity: CGFloat) {
+    func didRecognizePanGesture(state: UIGestureRecognizer.State, transitionX: CGFloat) {
 
+        let lengthToSlide = self.initialFrame.minX
+        let changedX = lengthToSlide - self.topView.frame.minX
+        let intensity = min(changedX * 10, lengthToSlide) / lengthToSlide    // 0 < intensity <= 1
+                
         switch state {
         case .began:
             
@@ -81,11 +82,27 @@ extension SettingContainerView: ButtonViewProtocol {
             
             break
             
-        case .ended:
+        case .changed:
+            self.topView.setCenter(with: transitionX)
+            self.topView.setAlpha(with: 1 - intensity)
             
+            self.contentView.setBlur(with: intensity)
+            break
+            
+        case .ended:
             if intensity < 0.5 {
-                self.frame = self.initialFrameOfTopView
+                
+                UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
+                    self.frame = self.initialFrame
+                    self.topView.frame = self.bounds
+                    self.topView.setAlpha(with: 1)
+                } completion: { _ in }
+
+
+            } else {
+                self.topView.setAlpha(with: 0)
             }
+            break
             
         default:
             break
