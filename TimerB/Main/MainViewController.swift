@@ -22,9 +22,10 @@ class MainViewController: UIViewController {
         self.mainList.setCell(cellName: StartGameCell.self)
         
         
-        self.settingContainer = SettingContainerView(frame: CGRect(origin: .zero,
-                                                                   size: CGSize(width: .mainWidth,
-                                                                                height: 100)))
+        self.settingContainer = SettingContainerView(frame: CGRect(x: .mainWidth - 62,
+                                                                   y: 40,
+                                                                   width: .mainWidth - 40,
+                                                                   height: 60))
 
     }
     

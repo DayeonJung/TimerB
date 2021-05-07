@@ -9,12 +9,13 @@ import UIKit
 
 protocol ButtonViewProtocol {
     func didRecognizePanGesture(state: UIGestureRecognizer.State,
-                                point: CGPoint)
+                                intensity: CGFloat)
 }
 
 class SettingButtonView: RoundedView {
 
     var delegate: ButtonViewProtocol?
+    private var initialFrame: CGRect = .zero
     
     required init(frame: CGRect? = nil,
                   radius: CGFloat? = nil,
@@ -45,6 +46,7 @@ class SettingButtonView: RoundedView {
         
         self.initSettingIcon()
         
+        self.initialFrame = self.frame
         
         
     }
@@ -67,22 +69,31 @@ class SettingButtonView: RoundedView {
         self.center = CGPoint(x: changedX, y: maintainingY)
         sender.setTranslation(.zero, in: self)
         
+        
+        let changedAmount = self.initialFrame.minX - self.frame.minX
+        let intensity = min(changedAmount * 10, self.initialFrame.minX) / self.initialFrame.minX    // 0 < intensity <= 1
+
+        
         switch sender.state {
         case .began:
-            print("pan began", changedX)
+
             break
+            
         case .changed:
-            print("pan changed", changedX)
+
             break
+            
         case .ended:
-            print("pan ended", changedX)
+            
+
             break
+            
         default:
             break
         }
         
         self.delegate?.didRecognizePanGesture(state: sender.state,
-                                              point: self.center)
+                                              intensity: intensity)
     }
     
 }
