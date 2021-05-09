@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitleValueView">
+            <connections>
+                <outlet property="titleLabel" destination="HwD-hV-R3N" id="rRK-0Y-cas"/>
+                <outlet property="valueLabel" destination="6Zj-sM-tHX" id="DP7-wz-ne8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="74" height="42"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HwD-hV-R3N">
+                    <rect key="frame" x="0.0" y="13.5" width="25" height="15"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-sM-tHX">
+                    <rect key="frame" x="34" y="0.0" width="40" height="42"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="36"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="HwD-hV-R3N" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BqS-hm-C40"/>
+                <constraint firstAttribute="trailing" secondItem="6Zj-sM-tHX" secondAttribute="trailing" id="DG2-In-4tw"/>
+                <constraint firstItem="6Zj-sM-tHX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="HwD-hV-R3N" secondAttribute="trailing" constant="16" id="UOW-GG-XvQ"/>
+                <constraint firstItem="HwD-hV-R3N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X6H-Ij-DPe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6Zj-sM-tHX" secondAttribute="bottom" id="ekp-IZ-uOJ"/>
+                <constraint firstItem="6Zj-sM-tHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lmC-Zg-sIe"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-37.681159420289859" y="-217.29910714285714"/>
+        </view>
+    </objects>
+</document>

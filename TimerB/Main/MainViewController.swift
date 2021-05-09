@@ -18,49 +18,80 @@ class MainViewController: UIViewController {
 
         self.mainList.setCell(cellName: SelectOptionCell.self)
         self.mainList.setCell(cellName: StartGameCell.self)
+        self.mainList.setCell(cellName: RecentCell.self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        let saved = RecentManager.recentOptions()
+        self.mainViewModel.savedOptions = saved
+        self.mainList.reloadData()
+    }
 
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return self.mainViewModel.sections.count
+        return self.mainViewModel.numberOfSections()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.mainViewModel.sectionType(with: section) == .SetOptions ? 3 : self.mainViewModel.savedOptions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.item == 2 {
-            let startCell = collectionView.loadCell(identifier: StartGameCell.self, indexPath: indexPath)
-            
-            startCell.startButton.onClick = {
+        let type = self.mainViewModel.sectionType(with: indexPath.section)
+        switch type {
+        case .SetOptions:
+            if indexPath.item == 2 {
+                let startCell = collectionView.loadCell(identifier: StartGameCell.self, indexPath: indexPath)
                 
-                let timerVC = getController(with: .Main,
-                              viewController: TimerViewController.self)
-                timerVC.timerViewModel = self.mainViewModel.setTimeViewModel()
-                self.navigationController?.pushViewController(timerVC, animated: true)
+                startCell.startButton.onClick = {
+                    
+                    let timerVC = getController(with: .Main,
+                                  viewController: TimerViewController.self)
+                    let timeVM = self.mainViewModel.setTimeViewModel()
+                    
+                    timerVC.timerViewModel = timeVM
+                    self.mainViewModel.saveAsRecentOption(with: timeVM)
+                    self.navigationController?.pushViewController(timerVC, animated: true)
+                    
+                    
+                }
+                
+                return startCell
             }
             
-            return startCell
+            let cell = collectionView.loadCell(identifier: SelectOptionCell.self, indexPath: indexPath)
+            cell.setViewModel(with: self.mainViewModel.options[indexPath.item])
+            
+            return cell
+            
+        case .Recent:
+            let recentCell = collectionView.loadCell(identifier: RecentCell.self, indexPath: indexPath)
+            recentCell.setUI(with: self.mainViewModel.savedOptions[indexPath.item])
+            return recentCell
         }
         
-        let cell = collectionView.loadCell(identifier: SelectOptionCell.self, indexPath: indexPath)
-        cell.setViewModel(with: self.mainViewModel.options[indexPath.item])
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
-        return UIEdgeInsets(top: 36,
-                            left: 0,
-                            bottom: 86,
-                            right: 0)
+        let type = self.mainViewModel.sectionType(with: section)
+        
+        switch type {
+        case .SetOptions:
+            return UIEdgeInsets(top: 36,
+                                left: 0,
+                                bottom: 86,
+                                right: 0)
+        case .Recent:
+            return UIEdgeInsets()
+        }
+        
     }
 
 }
