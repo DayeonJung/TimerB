@@ -20,6 +20,9 @@ class RecentCell: UICollectionViewCell {
         self.iconView.layer.cornerRadius = self.iconView.bounds.height/2
         self.iconView.clipsToBounds = true
         
+        self.layer.cornerRadius = 8
+        self.clipsToBounds = true
+        
     }
 
     func setUI(with data: RecentOption) {

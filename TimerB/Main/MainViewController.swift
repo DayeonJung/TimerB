@@ -89,15 +89,37 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                 bottom: 86,
                                 right: 0)
         case .Recent:
-            return UIEdgeInsets()
+            return UIEdgeInsets(top: 0,
+                                left: 20,
+                                bottom: 0,
+                                right: 20)
         }
         
     }
 
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        
+        let type = self.mainViewModel.sectionType(with: section)
+        
+        switch type {
+        case .SetOptions:
+            return 30
+        case .Recent:
+            return 12
+        }
+    }
 }
 
 extension MainViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: UIScreen.main.bounds.width, height: 60)
+        
+        let type = self.mainViewModel.sectionType(with: indexPath.section)
+        
+        switch type {
+        case .SetOptions:
+            return CGSize(width: UIScreen.main.bounds.width, height: 60)
+        case .Recent:
+            return CGSize(width: UIScreen.main.bounds.width - 40, height: 60)
+        }
     }
 }

@@ -83,7 +83,7 @@ class MainViewModel {
     
     func saveAsRecentOption(with model: TimerViewModel) {
         
-        let recent = RecentOption(.systemRed,
+        let recent = RecentOption(self.colorSet.randomElement() ?? UIColor(),
                                   model.getMaxTime(),
                                   model.playerInfo.count)
         RecentManager.saveRecentOption(with: recent)
