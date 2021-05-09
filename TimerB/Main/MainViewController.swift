@@ -28,6 +28,18 @@ class MainViewController: UIViewController {
         self.mainViewModel.savedOptions = saved
         self.mainList.reloadData()
     }
+    
+    private func moveToNextPage() {
+        
+        let timerVC = getController(with: .Main,
+                      viewController: TimerViewController.self)
+        let timeVM = self.mainViewModel.setTimeViewModel()
+        
+        timerVC.timerViewModel = timeVM
+        self.mainViewModel.saveAsRecentOption(with: timeVM)
+        self.navigationController?.pushViewController(timerVC, animated: true)
+
+    }
 
 }
 
@@ -50,16 +62,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
                 let startCell = collectionView.loadCell(identifier: StartGameCell.self, indexPath: indexPath)
                 
                 startCell.startButton.onClick = {
-                    
-                    let timerVC = getController(with: .Main,
-                                  viewController: TimerViewController.self)
-                    let timeVM = self.mainViewModel.setTimeViewModel()
-                    
-                    timerVC.timerViewModel = timeVM
-                    self.mainViewModel.saveAsRecentOption(with: timeVM)
-                    self.navigationController?.pushViewController(timerVC, animated: true)
-                    
-                    
+                    self.moveToNextPage()
                 }
                 
                 return startCell
@@ -76,6 +79,15 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return recentCell
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let type = self.mainViewModel.sectionType(with: indexPath.section)
+        
+        if type == .Recent {
+            self.mainViewModel.setOptionInfo(with: indexPath.item)
+            self.moveToNextPage()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

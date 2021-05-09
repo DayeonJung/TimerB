@@ -89,4 +89,11 @@ class MainViewModel {
         RecentManager.saveRecentOption(with: recent)
     }
     
+    func setOptionInfo(with index: Int) {
+        
+        self.optionInfo(with: .Player).option.setValue(with: self.savedOptions[index].player)
+        self.optionInfo(with: .Time).option.setValue(with: self.savedOptions[index].time)
+
+    }
+    
 }

@@ -24,8 +24,8 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-sM-tHX">
-                    <rect key="frame" x="34" y="0.0" width="40" height="42"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Zj-sM-tHX">
+                    <rect key="frame" x="34" y="4" width="40" height="38"/>
                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="36"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -38,11 +38,11 @@
                 <constraint firstAttribute="trailing" secondItem="6Zj-sM-tHX" secondAttribute="trailing" id="DG2-In-4tw"/>
                 <constraint firstItem="6Zj-sM-tHX" firstAttribute="leading" relation="lessThanOrEqual" secondItem="HwD-hV-R3N" secondAttribute="trailing" constant="16" id="UOW-GG-XvQ"/>
                 <constraint firstItem="HwD-hV-R3N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="X6H-Ij-DPe"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="6Zj-sM-tHX" secondAttribute="bottom" id="ekp-IZ-uOJ"/>
-                <constraint firstItem="6Zj-sM-tHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lmC-Zg-sIe"/>
+                <constraint firstAttribute="bottom" secondItem="6Zj-sM-tHX" secondAttribute="bottom" id="ekp-IZ-uOJ"/>
+                <constraint firstItem="6Zj-sM-tHX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="lmC-Zg-sIe"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-37.681159420289859" y="-217.29910714285714"/>
+            <point key="canvasLocation" x="-37.681159420289859" y="-217.63392857142856"/>
         </view>
     </objects>
 </document>
