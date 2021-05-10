@@ -53,7 +53,7 @@ class SettingContainerView: UIView {
         self.addSubview(self.topView)
         
         self.topView.delegate = self
-    
+        self.contentView.delegate = self
         
         // add a view above all(even navigation bar)
         let keyWindow = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
@@ -90,7 +90,8 @@ extension SettingContainerView: ButtonViewProtocol {
             break
             
         case .ended:
-            if intensity < 0.5 {
+            
+            if intensity < 0.5 {    // 원래 버튼으로 돌아온다
                 
                 UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut) {
                     self.frame = self.initialFrame
@@ -99,8 +100,10 @@ extension SettingContainerView: ButtonViewProtocol {
                 } completion: { _ in }
 
 
-            } else {
+            } else {    // 설정 창이 열린다
                 self.topView.setAlpha(with: 0)
+                self.contentView.setBlur(with: 1)
+
             }
             break
             
@@ -109,6 +112,33 @@ extension SettingContainerView: ButtonViewProtocol {
         }
     }
     
+    
+    
+}
+
+extension SettingContainerView: ContentViewProtocol {
+    
+    func didRecognizeTapGesture() {
+        
+        UIView.animate(withDuration: 0.4) {
+            self.contentView.alpha = 0
+
+        } completion: { _ in
+
+            self.contentView.alpha = 1
+            self.contentView.noticeContainer.isHidden = true
+            
+            self.frame = self.initialFrame
+            self.topView.frame = self.bounds
+            self.topView.setAlpha(with: 1)
+            
+
+
+        }
+
+        
+
+    }
     
     
 }

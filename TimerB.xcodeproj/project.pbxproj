@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6050483D26492A87007DBF46 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6050483C26492A87007DBF46 /* SettingManager.swift */; };
 		60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FFB6BC2643800A00B1A671 /* SettingContentView.xib */; };
 		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
 		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6050483C26492A87007DBF46 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		60FFB6BC2643800A00B1A671 /* SettingContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingContentView.xib; sourceTree = "<group>"; };
 		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				B48D297B26356BB6003AC9A1 /* SettingViewModel.swift */,
 				B48D297E26356E33003AC9A1 /* SettingView.swift */,
 				B48D29852635801B003AC9A1 /* SettingView.xib */,
+				6050483C26492A87007DBF46 /* SettingManager.swift */,
 				B423816226428F5200D9E2B1 /* SettingContainerView.swift */,
 				B423844A2642E12200214582 /* SettingButtonView.swift */,
 				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
@@ -310,6 +313,7 @@
 				B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */,
 				B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
+				6050483D26492A87007DBF46 /* SettingManager.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
 				B47233232626DC6100B85B0E /* RoundedView.swift in Sources */,
 				B48D2982263570D4003AC9A1 /* SettingTopView.swift in Sources */,
