@@ -10,7 +10,7 @@ import UIKit
 
 class SettingView: UIView {
 
-    @IBOutlet weak var blurView: BlurEffectView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var noticeContainer: UIView!
     
     override init(frame: CGRect) {
@@ -35,7 +35,7 @@ class SettingView: UIView {
     
     func adjustAlphaOfBlurView(alpha: CGFloat) {
 
-        self.blurView.animator.fractionComplete = alpha
+//        self.blurView.animator.fractionComplete = alpha
         
         if alpha > 0.5 && self.noticeContainer.alpha == 0 {
             self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
@@ -53,7 +53,7 @@ class SettingView: UIView {
     }
     
     func setOpenedViewUI() {
-        self.blurView.animator.fractionComplete = 1
+//        self.blurView.animator.fractionComplete = 1
         self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
     }
     

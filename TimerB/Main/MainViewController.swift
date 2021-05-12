@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
     
     var mainViewModel = MainViewModel()
     
-    var settingContainer: SettingContainerView!
+    var settingContainer: SettingManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +21,7 @@ class MainViewController: UIViewController {
         self.mainList.setCell(cellName: SelectOptionCell.self)
         self.mainList.setCell(cellName: StartGameCell.self)
         
-        
-        self.settingContainer = SettingContainerView(frame: CGRect(x: .mainWidth - 62,
-                                                                   y: 40,
-                                                                   width: .mainWidth - 40,
-                                                                   height: 60))
-
+        self.settingContainer = SettingManager()
     }
     
 

@@ -69,7 +69,7 @@ class SettingContainerView: UIView {
 
 
 extension SettingContainerView: ButtonViewProtocol {
-    func didRecognizePanGesture(state: UIGestureRecognizer.State, transitionX: CGFloat) {
+    func didRecognizePanGesture(state: UIGestureRecognizer.State, intensity: CGFloat) {
 
         let lengthToSlide = self.initialFrame.minX
         let changedX = lengthToSlide - self.topView.frame.minX
@@ -83,7 +83,7 @@ extension SettingContainerView: ButtonViewProtocol {
             break
             
         case .changed:
-            self.topView.setCenter(with: transitionX)
+//            self.topView.setCenter(with: transitionX)
             self.topView.setAlpha(with: 1 - intensity)
             
             self.contentView.setBlur(with: intensity)
@@ -117,16 +117,14 @@ extension SettingContainerView: ButtonViewProtocol {
 }
 
 extension SettingContainerView: ContentViewProtocol {
-    
     func didRecognizeTapGesture() {
-        
         UIView.animate(withDuration: 0.4) {
             self.contentView.alpha = 0
 
         } completion: { _ in
 
             self.contentView.alpha = 1
-            self.contentView.noticeContainer.isHidden = true
+//            self.contentView.noticeContainer.isHidden = true
             
             self.frame = self.initialFrame
             self.topView.frame = self.bounds
@@ -135,10 +133,8 @@ extension SettingContainerView: ContentViewProtocol {
 
 
         }
-
-        
-
     }
+    
     
     
 }

@@ -13,10 +13,11 @@ protocol ContentViewProtocol {
 
 class SettingContentView: UIView {
 
-    @IBOutlet weak var blurView: BlurEffectView!
+    @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var noticeContainer: UIView!
     
-    @IBOutlet var noticeButtons: [IconButton]!
+    let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut)
+
     var delegate: ContentViewProtocol?
     
     override init(frame: CGRect) {
@@ -36,54 +37,53 @@ class SettingContentView: UIView {
         superView.frame = self.bounds
         superView.layoutIfNeeded()
         
-        self.noticeContainer.alpha = 0
-        self.noticeContainer.isHidden = true
-        
         self.addGestureRecognizer(UITapGestureRecognizer(target: self,
                                                                       action: #selector(self.didTapBackground)))
-    }
-    
-    @IBAction func didClickNoticeButton(_ sender: UIButton) {
         
-        switch sender.tag {
-        case 0:
-            
-            break
-        case 1:
-            break
-        default:
-            break
+        self.blurView.effect = nil
+        self.animator.addAnimations { [weak self] in
+            self?.blurView.effect = UIBlurEffect(style: .dark)
         }
-    }
-    
-    
-    func setButtonsUI(tag: Int, state: Bool) {
-        
-        self.noticeButtons[tag].set
+
+        self.noticeContainer.alpha = 0
+//        self.noticeContainer.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
     }
+
+
     
     
     
     @objc private func didTapBackground() {
         
         self.delegate?.didRecognizeTapGesture()
+        self.resetUIToInitialState()
         
+    }
+    
+    func resetUIToInitialState() {
+        UIView.animate(withDuration: 0.4) {
+            self.alpha = 0
+        } completion: { _ in
+            self.removeFromSuperview()
+            self.alpha = 1
+        }
     }
     
     
     func setBlur(with value: CGFloat) {
-        self.blurView.animator.fractionComplete = value
         
-        if value > 0.5 && self.noticeContainer.alpha == 0 {
-            self.noticeContainer.isHidden = false
-            
-            self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
-            
-        } else if value <= 0.5 {
-            self.animateNoticeContainer(alpha: 0, transform: (1.0, 1.0))
-            
-        }
+        self.animator.fractionComplete = value
+
+//        if value > 0.5 && self.noticeContainer.alpha == 0 {
+//            
+//            self.animateNoticeContainer(alpha: 1, transform: (1.0, 1.0))
+//            
+//        } else if value <= 0.5 {
+//            
+//            self.animateNoticeContainer(alpha: 0, transform: (0.9, 0.9))
+//            
+//        }
         
     }
  
@@ -94,11 +94,11 @@ class SettingContentView: UIView {
             self.noticeContainer.transform = CGAffineTransform(scaleX: transform.0, y: transform.1)
         }
     }
-    
-    func setOpenedViewUI() {
-        self.blurView.animator.fractionComplete = 1
-        self.animateNoticeContainer(alpha: 1, transform: (1.1, 1.1))
-    }
-    
+
+//    func setOpenedViewUI() {
+//        self.animator.fractionComplete = 1
+//        self.animateNoticeContainer(alpha: 1, transform: (1.0, 1.0))
+//    }
+
     
 }

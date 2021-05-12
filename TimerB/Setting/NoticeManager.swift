@@ -1,5 +1,5 @@
 //
-//  SettingManager.swift
+//  NoticeManager.swift
 //  TimerB
 //
 //  Created by 정다연 on 2021/05/10.
