@@ -88,15 +88,14 @@ class SettingContentView: UIView {
             if intensity < 0.5 {
                 self.resetUIToInitialState()
             } else {
-                self.setAnimation(willShow: true)
-                self.animator.fractionComplete = 1
-
+                self.setBlur(with: 1.0)
             }
             break
             
         default:
             break
         }
+        
         
     }
     
@@ -108,14 +107,14 @@ class SettingContentView: UIView {
         let shouldShow = value > 0.5 && !self.noticeContainerIsShowing
         let shouldHide = value <= 0.5 && self.noticeContainerIsShowing
         
-        
-        if shouldShow {
+    
+        if value == 1.0 || shouldShow {
             self.setAnimation(willShow: true)
             self.noticeContainerIsShowing = true
         } else if shouldHide {
             self.setAnimation(willShow: false)
             self.noticeContainerIsShowing = false
-
+ 
         }
 
     }

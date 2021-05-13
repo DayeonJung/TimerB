@@ -137,7 +137,7 @@
         </designable>
     </designables>
     <resources>
-        <image name="volume.2.fill" catalog="system" width="128" height="90"/>
+        <image name="volume.2.fill" catalog="system" width="32" height="32"/>
         <namedColor name="Card_Background">
             <color red="0.17299999296665192" green="0.17299999296665192" blue="0.18000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

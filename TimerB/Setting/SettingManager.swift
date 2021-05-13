@@ -17,7 +17,6 @@ class SettingManager {
     
     private var fullFrame = CGRect()
     
-
     
     init() {
         self.buttonView = SettingButtonView(frame: CGRect(x: .mainWidth - 62,
@@ -25,12 +24,13 @@ class SettingManager {
                                                           width: .mainWidth - 40,
                                                           height: 60),
                                             radius: 30,
-                                            bgColor: .systemRed)
+                                            bgColor: .cardBackground)
         
         self.contentView = SettingContentView(frame: CGRect(origin: .zero,
                                                             size: CGSize(width: .mainWidth,
                                                                          height: .mainHeight)))
-        
+        self.contentView.delegate = self
+
         self.fullFrame = self.contentView.frame
         
         // add a view above all(even navigation bar)
@@ -52,7 +52,6 @@ extension SettingManager: ButtonViewProtocol {
         case .began:
             
             self.keyWindow?.insertSubview(self.contentView, belowSubview: self.buttonView)
-            self.contentView.delegate = self
             break
         
         default:

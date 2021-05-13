@@ -13,7 +13,6 @@
 		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
 		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
-		B423816326428F5200D9E2B1 /* SettingContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423816226428F5200D9E2B1 /* SettingContainerView.swift */; };
 		B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42381652642946A00D9E2B1 /* SettingContentView.swift */; };
 		B423844B2642E12200214582 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423844A2642E12200214582 /* SettingButtonView.swift */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
@@ -25,9 +24,6 @@
 		B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824916261B5FBE00D07969 /* StartGameCell.swift */; };
 		B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4824917261B5FBE00D07969 /* StartGameCell.xib */; };
 		B482491C261B61AB00D07969 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482491B261B61AB00D07969 /* Color.xcassets */; };
-		B48D297F26356E33003AC9A1 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D297E26356E33003AC9A1 /* SettingView.swift */; };
-		B48D2982263570D4003AC9A1 /* SettingTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48D2981263570D4003AC9A1 /* SettingTopView.swift */; };
-		B48D29862635801B003AC9A1 /* SettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48D29852635801B003AC9A1 /* SettingView.xib */; };
 		B4A08DC32619B39300F46CD9 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A08DC22619B39300F46CD9 /* List.swift */; };
 		B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CB26198E18002DEBC7 /* AppDelegate.swift */; };
 		B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */; };
@@ -51,7 +47,6 @@
 		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
-		B423816226428F5200D9E2B1 /* SettingContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContainerView.swift; sourceTree = "<group>"; };
 		B42381652642946A00D9E2B1 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
 		B423844A2642E12200214582 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
@@ -63,9 +58,6 @@
 		B4824916261B5FBE00D07969 /* StartGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCell.swift; sourceTree = "<group>"; };
 		B4824917261B5FBE00D07969 /* StartGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartGameCell.xib; sourceTree = "<group>"; };
 		B482491B261B61AB00D07969 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		B48D297E26356E33003AC9A1 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
-		B48D2981263570D4003AC9A1 /* SettingTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTopView.swift; sourceTree = "<group>"; };
-		B48D29852635801B003AC9A1 /* SettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingView.xib; sourceTree = "<group>"; };
 		B4A08DC22619B39300F46CD9 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		B4A255C826198E18002DEBC7 /* TimerB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A255CB26198E18002DEBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,35 +87,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		60798672264B6CA600715280 /* old */ = {
-			isa = PBXGroup;
-			children = (
-				B48D2981263570D4003AC9A1 /* SettingTopView.swift */,
-				B48D297E26356E33003AC9A1 /* SettingView.swift */,
-				B48D29852635801B003AC9A1 /* SettingView.xib */,
-			);
-			path = old;
-			sourceTree = "<group>";
-		};
-		60798673264B6CB700715280 /* second */ = {
-			isa = PBXGroup;
-			children = (
-				B423816226428F5200D9E2B1 /* SettingContainerView.swift */,
-				B423844A2642E12200214582 /* SettingButtonView.swift */,
-				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
-				60FFB6BC2643800A00B1A671 /* SettingContentView.xib */,
-			);
-			path = second;
-			sourceTree = "<group>";
-		};
-		60798674264B6CC100715280 /* new */ = {
-			isa = PBXGroup;
-			children = (
-				60798677264B8E0200715280 /* SettingManager.swift */,
-			);
-			path = new;
-			sourceTree = "<group>";
-		};
 		B472331E2626DBBF00B85B0E /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,9 +121,10 @@
 			isa = PBXGroup;
 			children = (
 				6050483C26492A87007DBF46 /* NoticeManager.swift */,
-				60798672264B6CA600715280 /* old */,
-				60798673264B6CB700715280 /* second */,
-				60798674264B6CC100715280 /* new */,
+				60798677264B8E0200715280 /* SettingManager.swift */,
+				B423844A2642E12200214582 /* SettingButtonView.swift */,
+				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
+				60FFB6BC2643800A00B1A671 /* SettingContentView.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -300,7 +264,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
-				B48D29862635801B003AC9A1 /* SettingView.xib in Resources */,
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
@@ -321,7 +284,6 @@
 				B4D653B4261F2959009D81F4 /* TimerViewModel.swift in Sources */,
 				B4A255E626199456002DEBC7 /* MainViewModel.swift in Sources */,
 				B4A255E2261993A2002DEBC7 /* MainModel.swift in Sources */,
-				B48D297F26356E33003AC9A1 /* SettingView.swift in Sources */,
 				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
 				B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */,
 				B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */,
@@ -329,7 +291,6 @@
 				6050483D26492A87007DBF46 /* NoticeManager.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
 				B47233232626DC6100B85B0E /* RoundedView.swift in Sources */,
-				B48D2982263570D4003AC9A1 /* SettingTopView.swift in Sources */,
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
 				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
 				B423844B2642E12200214582 /* SettingButtonView.swift in Sources */,
@@ -338,7 +299,6 @@
 				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
 				B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */,
-				B423816326428F5200D9E2B1 /* SettingContainerView.swift in Sources */,
 				B4824914261B5B5600D07969 /* TitleButton.swift in Sources */,
 				B4D653BA261F2E53009D81F4 /* TimerModel.swift in Sources */,
 				B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */,
