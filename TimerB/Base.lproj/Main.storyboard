@@ -164,21 +164,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J3G-Lc-t2L">
+                                <rect key="frame" x="188.5" y="260" width="37" height="17"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ezh-CA-Nky"/>
                         <color key="backgroundColor" name="Background"/>
                         <constraints>
+                            <constraint firstItem="J3G-Lc-t2L" firstAttribute="top" secondItem="lPz-Rj-coP" secondAttribute="bottom" constant="-12" id="Brs-og-mhT"/>
+                            <constraint firstItem="lPz-Rj-coP" firstAttribute="top" secondItem="Ezh-CA-Nky" secondAttribute="top" constant="108" id="LHb-ed-nkh"/>
+                            <constraint firstItem="J3G-Lc-t2L" firstAttribute="centerX" secondItem="lPz-Rj-coP" secondAttribute="centerX" id="LTv-bv-rGt"/>
                             <constraint firstItem="4K0-Ru-aQd" firstAttribute="centerX" secondItem="Kn6-vY-TLu" secondAttribute="centerX" id="PfQ-EM-xif"/>
                             <constraint firstItem="oSy-jb-pqm" firstAttribute="bottom" secondItem="4K0-Ru-aQd" secondAttribute="bottom" constant="16" id="S5i-4d-dbM"/>
                             <constraint firstItem="Ezh-CA-Nky" firstAttribute="trailing" secondItem="oSy-jb-pqm" secondAttribute="trailing" constant="20" id="XXr-jo-6dd"/>
                             <constraint firstItem="lPz-Rj-coP" firstAttribute="centerX" secondItem="Kn6-vY-TLu" secondAttribute="centerX" id="b4t-MR-CG7"/>
                             <constraint firstItem="oSy-jb-pqm" firstAttribute="bottom" secondItem="Ezh-CA-Nky" secondAttribute="bottom" constant="-8" id="bnO-Ta-IEw"/>
-                            <constraint firstItem="lPz-Rj-coP" firstAttribute="top" secondItem="Ezh-CA-Nky" secondAttribute="top" constant="108" id="om4-TL-9gz"/>
                             <constraint firstItem="oSy-jb-pqm" firstAttribute="leading" secondItem="Ezh-CA-Nky" secondAttribute="leading" constant="20" id="tPG-hi-Rkz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="zJx-Ud-t8H" id="Arh-e1-6bK"/>
+                        <outlet property="playerLabel" destination="J3G-Lc-t2L" id="QJg-kV-MNt"/>
                         <outlet property="timeLabel" destination="lPz-Rj-coP" id="bhj-7P-9Ss"/>
                     </connections>
                 </viewController>

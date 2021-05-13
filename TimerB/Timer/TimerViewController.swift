@@ -18,6 +18,7 @@ class TimerViewController: UIViewController {
             }
             
             self.timerViewModel?.playerDidChange = { player in
+                self.playerLabel.text = player.name
                 self.waveView.shouldInit(with: player.color)
             }
             
@@ -33,6 +34,7 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var playButton: IconButton!
+    @IBOutlet weak var playerLabel: UILabel!
     
     var waveView: WaveView!
 
@@ -40,6 +42,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
+        self.playerLabel.text = self.timerViewModel?.playerInfo.first?.name
         
         self.initWaveView()
         self.setBottomButtonsUI()
