@@ -47,29 +47,20 @@ class SettingManager {
 extension SettingManager: ButtonViewProtocol {
     
     func didRecognizePanGesture(state: UIGestureRecognizer.State, intensity: CGFloat) {
-        print(state.rawValue, intensity)
+
         switch state {
         case .began:
             
             self.keyWindow?.insertSubview(self.contentView, belowSubview: self.buttonView)
             self.contentView.delegate = self
-            
             break
-            
-        case .changed:
-            self.contentView.setBlur(with: intensity)
-            break
-            
-        case .ended:
-//            if intensity < 0.5 {
-//                self.contentView.resetUIToInitialState()
-//            }
-            break
-            
+        
         default:
             break
         }
         
+        self.contentView.didRecognizePanGesture(state: state,
+                                                intensity: intensity)
         
     }
     
@@ -79,7 +70,7 @@ extension SettingManager: ButtonViewProtocol {
 
 extension SettingManager: ContentViewProtocol {
     
-    func didRecognizeTapGesture() {
+    func resetUIToInitialState() {
        
         self.buttonView.setAlpha(with: 1, animate: true)
         

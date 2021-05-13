@@ -86,7 +86,7 @@ extension SettingContainerView: ButtonViewProtocol {
 //            self.topView.setCenter(with: transitionX)
             self.topView.setAlpha(with: 1 - intensity)
             
-            self.contentView.setBlur(with: intensity)
+//            self.contentView.setBlur(with: intensity)
             break
             
         case .ended:
@@ -102,7 +102,7 @@ extension SettingContainerView: ButtonViewProtocol {
 
             } else {    // 설정 창이 열린다
                 self.topView.setAlpha(with: 0)
-                self.contentView.setBlur(with: 1)
+//                self.contentView.setBlur(with: 1)
 
             }
             break
@@ -110,6 +110,8 @@ extension SettingContainerView: ButtonViewProtocol {
         default:
             break
         }
+        
+        
     }
     
     
@@ -117,14 +119,13 @@ extension SettingContainerView: ButtonViewProtocol {
 }
 
 extension SettingContainerView: ContentViewProtocol {
-    func didRecognizeTapGesture() {
+    func resetUIToInitialState() {
         UIView.animate(withDuration: 0.4) {
             self.contentView.alpha = 0
 
         } completion: { _ in
 
             self.contentView.alpha = 1
-//            self.contentView.noticeContainer.isHidden = true
             
             self.frame = self.initialFrame
             self.topView.frame = self.bounds
