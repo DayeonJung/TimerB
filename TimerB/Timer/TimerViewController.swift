@@ -42,7 +42,6 @@ class TimerViewController: UIViewController {
         
         self.timeLabel.text = String(self.timerViewModel?.currentTime ?? 99)
         
-//        self.initSettingTopView()
         self.initWaveView()
         self.setBottomButtonsUI()
         
