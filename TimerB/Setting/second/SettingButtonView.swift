@@ -20,7 +20,7 @@ class SettingButtonView: RoundedView {
     private var intensity: CGFloat {
         let lengthToSlide = self.initialFrame.minX
         let changedX = lengthToSlide - self.frame.minX
-        let intensity = min(changedX * 10, lengthToSlide) / lengthToSlide    // 0 < intensity <= 1
+        let intensity = min(changedX * 7, lengthToSlide) / lengthToSlide    // 0 < intensity <= 1
         return max(intensity, 0)
     }
     

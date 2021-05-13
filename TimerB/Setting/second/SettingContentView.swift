@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ContentViewProtocol {
-    func didRecognizeTapGesture()
+    func resetUIToInitialState()
 }
 
 class SettingContentView: UIView {
@@ -19,6 +19,8 @@ class SettingContentView: UIView {
     let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut)
 
     var delegate: ContentViewProtocol?
+    
+    var noticeContainerIsShowing: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,10 +46,11 @@ class SettingContentView: UIView {
         self.animator.addAnimations { [weak self] in
             self?.blurView.effect = UIBlurEffect(style: .dark)
         }
-
-        self.noticeContainer.alpha = 0
-//        self.noticeContainer.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
         
+        self.animator.pausesOnCompletion = true
+        
+        self.noticeContainer.alpha = 0
+
     }
 
 
@@ -56,49 +59,79 @@ class SettingContentView: UIView {
     
     @objc private func didTapBackground() {
         
-        self.delegate?.didRecognizeTapGesture()
+        self.delegate?.resetUIToInitialState()
         self.resetUIToInitialState()
         
     }
     
-    func resetUIToInitialState() {
+    private func resetUIToInitialState() {
         UIView.animate(withDuration: 0.4) {
             self.alpha = 0
         } completion: { _ in
-            self.removeFromSuperview()
             self.alpha = 1
+            self.removeFromSuperview()
+            self.animator.fractionComplete = 0
+            self.noticeContainer.alpha = 0
         }
     }
     
     
-    func setBlur(with value: CGFloat) {
+    func didRecognizePanGesture(state: UIGestureRecognizer.State, intensity: CGFloat) {
         
+        switch state {
+            
+        case .changed:
+            self.setBlur(with: intensity)
+            break
+            
+        case .ended:
+            if intensity < 0.5 {
+                self.resetUIToInitialState()
+            } else {
+                self.setAnimation(willShow: true)
+                self.animator.fractionComplete = 1
+
+            }
+            break
+            
+        default:
+            break
+        }
+        
+    }
+    
+    
+    private func setBlur(with value: CGFloat) {
+
         self.animator.fractionComplete = value
-
-//        if value > 0.5 && self.noticeContainer.alpha == 0 {
-//            
-//            self.animateNoticeContainer(alpha: 1, transform: (1.0, 1.0))
-//            
-//        } else if value <= 0.5 {
-//            
-//            self.animateNoticeContainer(alpha: 0, transform: (0.9, 0.9))
-//            
-//        }
         
+        let shouldShow = value > 0.5 && !self.noticeContainerIsShowing
+        let shouldHide = value <= 0.5 && self.noticeContainerIsShowing
+        
+        
+        if shouldShow {
+            self.setAnimation(willShow: true)
+            self.noticeContainerIsShowing = true
+        } else if shouldHide {
+            self.setAnimation(willShow: false)
+            self.noticeContainerIsShowing = false
+
+        }
+
     }
- 
+
     
-    private func animateNoticeContainer(alpha: CGFloat, transform: (CGFloat, CGFloat)) {
+    private func setAnimation(willShow: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
-            self.noticeContainer.alpha = alpha
-            self.noticeContainer.transform = CGAffineTransform(scaleX: transform.0, y: transform.1)
+            self.setNoticeContainerUI(willShow: willShow)
         }
     }
-
-//    func setOpenedViewUI() {
-//        self.animator.fractionComplete = 1
-//        self.animateNoticeContainer(alpha: 1, transform: (1.0, 1.0))
-//    }
-
+    
+    private func setNoticeContainerUI(willShow: Bool) {
+        self.noticeContainer.alpha = willShow ? 1 : 0
+        let scale: CGFloat = willShow ? 1.1 : 1.0
+        self.noticeContainer.transform = CGAffineTransform(scaleX: scale,
+                                                           y: scale)
+    }
     
 }
