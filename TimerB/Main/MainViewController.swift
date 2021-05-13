@@ -71,6 +71,10 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.loadCell(identifier: SelectOptionCell.self, indexPath: indexPath)
             cell.setViewModel(with: self.mainViewModel.options[indexPath.item])
             
+            cell.passAlertViewToController = { alertVC in
+                self.present(alertVC, animated: true, completion: nil)
+            }
+            
             return cell
             
         case .Recent:
