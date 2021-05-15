@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
         self.mainList.setCell(cellName: SelectOptionCell.self)
         self.mainList.setCell(cellName: StartGameCell.self)
         self.mainList.setCell(cellName: RecentCell.self)
+        self.mainList.setReusableView(viewName: TitleHeader.self,
+                                      viewType: .Header)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +85,28 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return recentCell
         }
         
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let type = self.mainViewModel.sectionType(with: section)
+        switch type {
+        case .SetOptions:
+            return .zero
+        case .Recent:
+            return CGSize(width: UIScreen.main.bounds.width, height: 52)
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let type = self.mainViewModel.sectionType(with: indexPath.section)
+        if type == .Recent {
+            let header = collectionView.loadReusableView(type: .Header,
+                                                         identifier: TitleHeader.self,
+                                                         indexPath: indexPath)
+            return header
+        }
+        
+        return UICollectionReusableView()
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

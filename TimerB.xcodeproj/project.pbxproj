@@ -18,6 +18,8 @@
 		B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4824917261B5FBE00D07969 /* StartGameCell.xib */; };
 		B482491C261B61AB00D07969 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482491B261B61AB00D07969 /* Color.xcassets */; };
 		B489FBB6263EC72C00F5C729 /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B489FBB5263EC72C00F5C729 /* UnderlineLabel.swift */; };
+		B48C27EB26500409000BEB5A /* TitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C27E926500409000BEB5A /* TitleHeader.swift */; };
+		B48C27EC26500409000BEB5A /* TitleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48C27EA26500409000BEB5A /* TitleHeader.xib */; };
 		B4A08DC32619B39300F46CD9 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A08DC22619B39300F46CD9 /* List.swift */; };
 		B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CB26198E18002DEBC7 /* AppDelegate.swift */; };
 		B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */; };
@@ -50,6 +52,8 @@
 		B4824917261B5FBE00D07969 /* StartGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartGameCell.xib; sourceTree = "<group>"; };
 		B482491B261B61AB00D07969 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		B489FBB5263EC72C00F5C729 /* UnderlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineLabel.swift; sourceTree = "<group>"; };
+		B48C27E926500409000BEB5A /* TitleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleHeader.swift; sourceTree = "<group>"; };
+		B48C27EA26500409000BEB5A /* TitleHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleHeader.xib; sourceTree = "<group>"; };
 		B4A08DC22619B39300F46CD9 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		B4A255C826198E18002DEBC7 /* TimerB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A255CB26198E18002DEBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 				B4A255E526199456002DEBC7 /* MainViewModel.swift */,
 				B4A255E82619952E002DEBC7 /* MainViewController.swift */,
 				B4D653B7261F2C93009D81F4 /* Cells */,
+				B48C27E926500409000BEB5A /* TitleHeader.swift */,
+				B48C27EA26500409000BEB5A /* TitleHeader.xib */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -266,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4AFBC66264D667D006516EB /* RecentCell.xib in Resources */,
+				B48C27EC26500409000BEB5A /* TitleHeader.xib in Resources */,
 				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
@@ -297,6 +304,7 @@
 				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
 				B489FBB6263EC72C00F5C729 /* UnderlineLabel.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,
+				B48C27EB26500409000BEB5A /* TitleHeader.swift in Sources */,
 				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
 				B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */,
