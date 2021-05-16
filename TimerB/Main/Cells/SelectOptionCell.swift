@@ -51,7 +51,8 @@ class SelectOptionViewModel: OptionViewModelProtocol {
             
             let originalValue = self.option.currentValue()
             let input = alert.textFields?.first?.text ?? String(originalValue)
-            let number = min(Int(input) ?? originalValue, type.maxNumber)
+            let inputBiggerThanZero = (Int(input) ?? 0) <= 0 ? 1 : Int(input)
+            let number = min(inputBiggerThanZero ?? originalValue, type.maxNumber)
             self.setNumber(with: number)
         }
         
