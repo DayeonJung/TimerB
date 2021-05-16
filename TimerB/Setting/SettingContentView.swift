@@ -17,6 +17,8 @@ class SettingContentView: UIView {
     @IBOutlet weak var noticeContainer: UIView!
     @IBOutlet var noticeButtons: [IconButton]!
     
+    @IBOutlet weak var playerList: UITableView!
+    
     let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut)
 
     var delegate: ContentViewProtocol?
@@ -54,6 +56,17 @@ class SettingContentView: UIView {
         
         self.noticeContainer.alpha = 0
 
+        
+        self.setNoticeButtonsEvent()
+        
+        self.playerList.delegate = self
+        self.playerList.dataSource = self
+        
+        
+    }
+
+
+    private func setNoticeButtonsEvent() {
         for (index, button) in self.noticeButtons.enumerated() {
             
             let type = NoticeManager.NoticeKey(rawValue: index) ?? .SOUND
@@ -68,8 +81,7 @@ class SettingContentView: UIView {
             }
         }
     }
-
-
+    
     private func setButtonUI(button: IconButton, isOn: Bool) {
         button.backgroundColor = isOn ? .white : .clear
         button.tintColor = isOn ? .cardBackground : .white
@@ -146,6 +158,19 @@ class SettingContentView: UIView {
             self.noticeContainer.transform = CGAffineTransform(scaleX: scale,
                                                                y: scale)
         }
+    }
+    
+    
+}
+
+extension SettingContentView: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
     }
     
     
