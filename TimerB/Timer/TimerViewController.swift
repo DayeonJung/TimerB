@@ -20,6 +20,7 @@ class TimerViewController: UIViewController {
             self.timerViewModel?.playerDidChange = { player in
                 self.playerLabel.text = player.name
                 self.waveView.shouldInit(with: player.color)
+                self.noticeManager.notifyIfNeeded()
             }
             
             self.timerViewModel?.timerStop = { state in
@@ -36,8 +37,8 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var playButton: IconButton!
     @IBOutlet weak var playerLabel: UILabel!
     
-
     var waveView: WaveView!
+    var noticeManager: NoticeManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +48,8 @@ class TimerViewController: UIViewController {
         
         self.initWaveView()
         self.setBottomButtonsUI()
+        
+        self.noticeManager = NoticeManager()
         
     }
     

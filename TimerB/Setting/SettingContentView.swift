@@ -15,12 +15,15 @@ class SettingContentView: UIView {
 
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var noticeContainer: UIView!
+    @IBOutlet var noticeButtons: [IconButton]!
     
     let animator = UIViewPropertyAnimator(duration: 1, curve: .easeOut)
 
     var delegate: ContentViewProtocol?
     
     var noticeContainerIsShowing: Bool = false
+    
+    let noticeManager = NoticeManager()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -51,10 +54,26 @@ class SettingContentView: UIView {
         
         self.noticeContainer.alpha = 0
 
+        for (index, button) in self.noticeButtons.enumerated() {
+            
+            let type = NoticeManager.NoticeKey(rawValue: index) ?? .SOUND
+            self.setButtonUI(button: button,
+                             isOn: self.noticeManager.notice(key: type))
+            
+            button.onClick = {
+                let value = self.noticeManager.setNotice(key: type)
+                self.setButtonUI(button: button,
+                                 isOn: value)
+                
+            }
+        }
     }
 
 
-    
+    private func setButtonUI(button: IconButton, isOn: Bool) {
+        button.backgroundColor = isOn ? .white : .clear
+        button.tintColor = isOn ? .cardBackground : .white
+    }
     
     
     @objc private func didTapBackground() {
