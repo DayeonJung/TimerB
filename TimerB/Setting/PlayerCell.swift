@@ -9,9 +9,14 @@ import UIKit
 
 class PlayerCell: UITableViewCell {
 
+    @IBOutlet weak var iconView: RoundedView!
+    @IBOutlet weak var playerLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.iconView.bgColor = .red
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

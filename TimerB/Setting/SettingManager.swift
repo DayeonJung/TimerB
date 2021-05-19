@@ -14,9 +14,7 @@ class SettingManager {
 
     private var buttonView: SettingButtonView
     private var contentView: SettingContentView
-    
-    private var fullFrame = CGRect()
-    
+        
     
     init() {
         self.buttonView = SettingButtonView(frame: CGRect(x: .mainWidth - 62,
@@ -30,8 +28,6 @@ class SettingManager {
                                                             size: CGSize(width: .mainWidth,
                                                                          height: .mainHeight)))
         self.contentView.delegate = self
-
-        self.fullFrame = self.contentView.frame
         
         // add a view above all(even navigation bar)
         if self.keyWindow?.subviews.last?.isKind(of: SettingButtonView.self) == false {

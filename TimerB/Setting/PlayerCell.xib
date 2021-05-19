@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,42 +16,68 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-ot-Szg">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVl-9y-ebE" userLabel="Icon View" customClass="RoundedView" customModule="TimerB" customModuleProvider="target">
                         <rect key="frame" x="20" y="12" width="40" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="1zK-wm-Z21">
+                                <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1kK-YD-F45"/>
+                                    <constraint firstAttribute="width" constant="20" id="ups-oy-ikq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="RWO-Uc-XGF"/>
-                            <constraint firstAttribute="height" constant="40" id="kS3-iv-8cH"/>
+                            <constraint firstItem="1zK-wm-Z21" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="7Md-ay-rC4"/>
+                            <constraint firstAttribute="width" constant="40" id="NmZ-U7-9ap"/>
+                            <constraint firstAttribute="height" constant="40" id="kZO-sf-k9l"/>
+                            <constraint firstItem="1zK-wm-Z21" firstAttribute="centerX" secondItem="jVl-9y-ebE" secondAttribute="centerX" id="oeh-90-OK3"/>
                         </constraints>
-                    </imageView>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov6-DW-Zxo">
                         <rect key="frame" x="76" y="22" width="42" height="20"/>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="list" translatesAutoresizingMaskIntoConstraints="NO" id="HGn-w8-thN">
-                        <rect key="frame" x="273" y="13" width="40" height="40"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="HGn-w8-thN">
+                        <rect key="frame" x="272" y="22" width="24" height="20"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="40" id="qQy-zk-UOZ"/>
-                            <constraint firstAttribute="height" constant="40" id="t9Y-Ee-c7X"/>
+                            <constraint firstAttribute="width" constant="24" id="qQy-zk-UOZ"/>
+                            <constraint firstAttribute="height" constant="20" id="t9Y-Ee-c7X"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="leading" secondItem="Edl-ot-Szg" secondAttribute="trailing" constant="16" id="6SE-gQ-VtU"/>
-                    <constraint firstAttribute="bottom" secondItem="Edl-ot-Szg" secondAttribute="bottom" constant="12" id="8HZ-fM-gO2"/>
-                    <constraint firstItem="Edl-ot-Szg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="DnJ-pH-Uyy"/>
-                    <constraint firstItem="Edl-ot-Szg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Lz5-K7-Xxs"/>
-                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="centerY" secondItem="Edl-ot-Szg" secondAttribute="centerY" id="rte-y2-lVC"/>
+                    <constraint firstItem="HGn-w8-thN" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="6lD-Mj-QQE"/>
+                    <constraint firstAttribute="bottom" secondItem="jVl-9y-ebE" secondAttribute="bottom" constant="12" id="8WX-UO-urh"/>
+                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="leading" secondItem="jVl-9y-ebE" secondAttribute="trailing" constant="16" id="GtG-Al-EAv"/>
+                    <constraint firstItem="jVl-9y-ebE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MCk-20-4Ew"/>
+                    <constraint firstItem="jVl-9y-ebE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ar3-cs-94C"/>
+                    <constraint firstAttribute="trailing" secondItem="HGn-w8-thN" secondAttribute="trailing" constant="24" id="cJn-Pk-7F4"/>
+                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="mYv-Zb-K1j"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="iconView" destination="jVl-9y-ebE" id="IP8-3v-qTY"/>
+                <outlet property="playerLabel" destination="Ov6-DW-Zxo" id="asb-1L-ehe"/>
+            </connections>
             <point key="canvasLocation" x="91" y="154"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="list" width="128" height="128"/>
+        <image name="menu" width="512" height="512"/>
+        <image name="person" width="512" height="512"/>
     </resources>
 </document>

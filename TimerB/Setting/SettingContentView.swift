@@ -62,7 +62,7 @@ class SettingContentView: UIView {
         self.playerList.delegate = self
         self.playerList.dataSource = self
         
-        
+        self.playerList.setCell(cellName: PlayerCell.self)
     }
 
 
@@ -170,7 +170,8 @@ extension SettingContentView: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.loadCell(identifier: PlayerCell.self, indexPath: indexPath)
+        return cell
     }
     
     
