@@ -36,6 +36,13 @@ class MainViewController: UIViewController {
         self.mainList.reloadData()
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.settingContainer.passPlayerInfos(with: [])
+    }
+    
     private func moveToNextPage() {
         
         let timerVC = getController(with: .Main,
@@ -43,6 +50,7 @@ class MainViewController: UIViewController {
         let timeVM = self.mainViewModel.setTimeViewModel()
         
         timerVC.timerViewModel = timeVM
+        self.settingContainer.passPlayerInfos(with: timeVM.playerInfo)
         self.mainViewModel.saveAsRecentOption(with: timeVM)
         self.navigationController?.pushViewController(timerVC, animated: true)
 

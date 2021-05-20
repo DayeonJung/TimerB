@@ -27,6 +27,13 @@ class SettingContentView: UIView {
     
     let noticeManager = NoticeManager()
     
+    var playerInfos: [PlayerInfo] = [] {
+        didSet {
+            self.playerList.isHidden = self.playerInfos.isEmpty
+            self.playerList.reloadData()
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.commoninit()
@@ -55,17 +62,29 @@ class SettingContentView: UIView {
         self.animator.pausesOnCompletion = true
         
         self.noticeContainer.alpha = 0
+        self.playerList.alpha = 0
 
-        
+        self.setPlayerListUI()
         self.setNoticeButtonsEvent()
         
-        self.playerList.delegate = self
-        self.playerList.dataSource = self
-        
-        self.playerList.setCell(cellName: PlayerCell.self)
     }
 
 
+    private func setPlayerListUI() {
+        
+        self.playerList.setCell(cellName: PlayerCell.self)
+
+        self.playerList.delegate = self
+        self.playerList.dataSource = self
+        
+        self.playerList.layer.cornerRadius = 32
+        self.playerList.clipsToBounds = true
+        
+        self.playerList.tableHeaderView = PlayerListHeader(frame: CGRect(origin: .zero, size: CGSize(width: .mainWidth, height: 70)))
+        
+
+    }
+    
     private func setNoticeButtonsEvent() {
         for (index, button) in self.noticeButtons.enumerated() {
             
@@ -103,6 +122,7 @@ class SettingContentView: UIView {
             self.removeFromSuperview()
             self.animator.fractionComplete = 0
             self.noticeContainer.alpha = 0
+            self.playerList.alpha = 0
         }
     }
     
@@ -154,8 +174,11 @@ class SettingContentView: UIView {
     private func setAnimation(willShow: Bool) {
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut]) {
             self.noticeContainer.alpha = willShow ? 1 : 0
+            self.playerList.alpha = willShow ? 1 : 0
             let scale: CGFloat = willShow ? 1.1 : 1.0
             self.noticeContainer.transform = CGAffineTransform(scaleX: scale,
+                                                               y: scale)
+            self.playerList.transform = CGAffineTransform(scaleX: scale,
                                                                y: scale)
         }
     }
@@ -166,11 +189,12 @@ class SettingContentView: UIView {
 extension SettingContentView: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return self.playerInfos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.loadCell(identifier: PlayerCell.self, indexPath: indexPath)
+        cell.info = self.playerInfos[indexPath.row]
         return cell
     }
     

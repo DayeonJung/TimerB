@@ -37,6 +37,12 @@ class SettingManager {
         
     }
     
+    func passPlayerInfos(with data: [PlayerInfo]) {
+        
+        self.contentView.playerInfos = data
+        
+    }
+    
 }
 
 

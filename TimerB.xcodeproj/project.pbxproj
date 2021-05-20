@@ -15,6 +15,8 @@
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42381652642946A00D9E2B1 /* SettingContentView.swift */; };
 		B423844B2642E12200214582 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423844A2642E12200214582 /* SettingButtonView.swift */; };
+		B43F91492656A0220028CF27 /* PlayerListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43F91482656A0220028CF27 /* PlayerListHeader.xib */; };
+		B43F914C2656A0340028CF27 /* PlayerListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F914B2656A0340028CF27 /* PlayerListHeader.swift */; };
 		B453EBEC26502CEE00C24DA3 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B453EBEB26502CEE00C24DA3 /* alert.mp3 */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
@@ -59,6 +61,8 @@
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B42381652642946A00D9E2B1 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
 		B423844A2642E12200214582 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
+		B43F91482656A0220028CF27 /* PlayerListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerListHeader.xib; sourceTree = "<group>"; };
+		B43F914B2656A0340028CF27 /* PlayerListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListHeader.swift; sourceTree = "<group>"; };
 		B453EBEB26502CEE00C24DA3 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
@@ -107,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B43F914626569FF90028CF27 /* PlayerList */ = {
+			isa = PBXGroup;
+			children = (
+				B48B786E26513CC800378FB4 /* PlayerCell.swift */,
+				B48B786F26513CC800378FB4 /* PlayerCell.xib */,
+				B43F91482656A0220028CF27 /* PlayerListHeader.xib */,
+				B43F914B2656A0340028CF27 /* PlayerListHeader.swift */,
+			);
+			path = PlayerList;
+			sourceTree = "<group>";
+		};
 		B472331E2626DBBF00B85B0E /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +179,7 @@
 				B423844A2642E12200214582 /* SettingButtonView.swift */,
 				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
 				60FFB6BC2643800A00B1A671 /* SettingContentView.xib */,
-				B48B786E26513CC800378FB4 /* PlayerCell.swift */,
-				B48B786F26513CC800378FB4 /* PlayerCell.xib */,
+				B43F914626569FF90028CF27 /* PlayerList */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -312,6 +326,7 @@
 				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
+				B43F91492656A0220028CF27 /* PlayerListHeader.xib in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
 				B482491C261B61AB00D07969 /* Color.xcassets in Resources */,
 				B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */,
@@ -338,6 +353,7 @@
 				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
 				B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */,
 				B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */,
+				B43F914C2656A0340028CF27 /* PlayerListHeader.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
 				6050483D26492A87007DBF46 /* NoticeManager.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,

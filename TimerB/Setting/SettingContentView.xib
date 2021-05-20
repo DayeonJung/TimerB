@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -114,17 +114,17 @@
                                     <constraint firstAttribute="bottom" secondItem="dP6-KN-Qz2" secondAttribute="bottom" id="tMc-bq-1kD"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R75-hw-OHb">
-                                <rect key="frame" x="44" y="270" width="326" height="574"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="R75-hw-OHb">
+                                <rect key="frame" x="59" y="288" width="296" height="556"/>
                                 <color key="backgroundColor" name="Card_Background"/>
                             </tableView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="R75-hw-OHb" firstAttribute="trailing" secondItem="zrb-vo-zOJ" secondAttribute="trailing" id="H3w-iR-Jsv"/>
                             <constraint firstItem="zrb-vo-zOJ" firstAttribute="top" secondItem="b9n-Ht-vah" secondAttribute="top" constant="120" id="Igh-H4-ezO"/>
-                            <constraint firstItem="R75-hw-OHb" firstAttribute="width" secondItem="zrb-vo-zOJ" secondAttribute="width" multiplier="1.1" id="RBV-cn-1ke"/>
-                            <constraint firstItem="R75-hw-OHb" firstAttribute="centerX" secondItem="b9n-Ht-vah" secondAttribute="centerX" id="Thj-cg-fkP"/>
-                            <constraint firstItem="R75-hw-OHb" firstAttribute="top" secondItem="zrb-vo-zOJ" secondAttribute="bottom" constant="30" id="dEp-9B-RaV"/>
+                            <constraint firstItem="R75-hw-OHb" firstAttribute="top" secondItem="zrb-vo-zOJ" secondAttribute="bottom" constant="48" id="dEp-9B-RaV"/>
                             <constraint firstItem="zrb-vo-zOJ" firstAttribute="centerX" secondItem="b9n-Ht-vah" secondAttribute="centerX" id="igk-pO-YXR"/>
+                            <constraint firstItem="R75-hw-OHb" firstAttribute="leading" secondItem="zrb-vo-zOJ" secondAttribute="leading" id="lmj-Ry-B4f"/>
                             <constraint firstAttribute="bottom" secondItem="R75-hw-OHb" secondAttribute="bottom" constant="52" id="vfC-Zy-pLv"/>
                         </constraints>
                     </view>
