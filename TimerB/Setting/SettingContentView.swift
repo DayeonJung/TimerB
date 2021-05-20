@@ -80,7 +80,9 @@ class SettingContentView: UIView {
         self.playerList.layer.cornerRadius = 32
         self.playerList.clipsToBounds = true
         
-        self.playerList.tableHeaderView = PlayerListHeader(frame: CGRect(origin: .zero, size: CGSize(width: .mainWidth, height: 70)))
+        self.playerList.tableHeaderView = PlayerListHeader(frame: CGRect(origin: .zero,
+                                                                         size: CGSize(width: .mainWidth,
+                                                                                      height: 70)))
         
 
     }
