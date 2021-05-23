@@ -100,3 +100,17 @@ class TimerViewController: UIViewController {
     
     
 }
+
+extension TimerViewController: SettingManagerProtocol {
+    
+    func settingManagerDidOpenContentView() {
+        self.timerViewModel?.shouldStop = true
+    }
+    
+    func settingManagerDidCloseContentView(with data: [PlayerInfo]) {
+        self.timerViewModel?.shouldUpdatePlayerInfos(with: data)
+        
+    }
+    
+    
+}

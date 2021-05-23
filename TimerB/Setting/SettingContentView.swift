@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ContentViewProtocol {
-    func resetUIToInitialState()
+    func resetUIToInitialState(with data: [PlayerInfo])
 }
 
 class SettingContentView: UIView {
@@ -30,7 +30,6 @@ class SettingContentView: UIView {
     var playerInfos: [PlayerInfo] = [] {
         didSet {
             self.playerList.isHidden = self.playerInfos.isEmpty
-            self.playerList.reloadData()
         }
     }
     
@@ -111,7 +110,7 @@ class SettingContentView: UIView {
     
     @objc private func didTapBackground() {
         
-        self.delegate?.resetUIToInitialState()
+        self.delegate?.resetUIToInitialState(with: self.playerInfos)
         self.resetUIToInitialState()
         
     }
@@ -200,5 +199,13 @@ extension SettingContentView: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    
+        if editingStyle == .delete {
+            self.playerInfos.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+
+        }
+    }
     
 }

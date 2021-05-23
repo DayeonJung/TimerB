@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-enum Direction {
-    case Next
-    case Back
-}
 
 protocol TimerViewModelProtocol {
     var playerInfo: [PlayerInfo] { get set }
@@ -22,6 +18,7 @@ protocol TimerViewModelProtocol {
     var timerStop: ((Bool) -> ())? { get set }
     func shouldGoToNextPlayer(to: Direction)
     func getMaxTime() -> Int
+    func shouldUpdatePlayerInfos(with: [PlayerInfo])
 }
 
 class TimerViewModel: TimerViewModelProtocol {
@@ -115,4 +112,53 @@ class TimerViewModel: TimerViewModelProtocol {
     func getMaxTime() -> Int {
         return self.maxTime
     }
+    
+    
+    
+    func shouldUpdatePlayerInfos(with data: [PlayerInfo]) {
+        
+        // 타이머를 재시작할 멤버는?
+        // 1순위 : 현재 카운트다운하고 있는 player
+        // 2순위 : 1순위가 삭제되어 없을 경우, 현재 존재하는 player 중 다음 순서.
+
+        var idxToRestart = 0
+        var dataIndexChanged = data
+        let currentPlayer = self.playerInfo[self.currentPlayerIdx]
+        
+        
+        // 현재 플레이어가 남아있을 경우 그대로 보여준다.
+        if let playerIdx = data.firstIndex(where: {$0 == currentPlayer}) {
+            
+            idxToRestart = playerIdx
+            
+        } else {
+            
+            // 현재 존재하는 player 중 다음 순서의 인덱스 저장.
+            for (currentIdx, info) in data.enumerated() {
+                
+                if info.index > self.currentPlayerIdx {
+                    idxToRestart = currentIdx
+                    break
+                }
+                
+            }
+            
+            // 바뀐 순서대로 0부터 인덱스 조정
+            dataIndexChanged = dataIndexChanged.enumerated().map { (index, info) -> PlayerInfo in
+                return PlayerInfo(index: index,
+                                  color: info.color,
+                                  name: info.name)
+            }
+            
+        }
+        
+        
+        self.playerInfo = dataIndexChanged
+        self.currentPlayerIdx = idxToRestart
+        self.shouldStop = false
+
+
+    }
+    
+    
 }

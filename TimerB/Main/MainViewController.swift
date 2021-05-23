@@ -50,6 +50,7 @@ class MainViewController: UIViewController {
         let timeVM = self.mainViewModel.setTimeViewModel()
         
         timerVC.timerViewModel = timeVM
+        self.settingContainer.delegate = timerVC
         self.settingContainer.passPlayerInfos(with: timeVM.playerInfo)
         self.mainViewModel.saveAsRecentOption(with: timeVM)
         self.navigationController?.pushViewController(timerVC, animated: true)

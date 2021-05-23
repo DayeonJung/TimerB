@@ -8,6 +8,12 @@
 import Foundation
 import UIKit
 
+
+protocol SettingManagerProtocol {
+    func settingManagerDidOpenContentView()
+    func settingManagerDidCloseContentView(with data: [PlayerInfo])
+}
+
 class SettingManager {
     
     private let keyWindow: UIWindow? = UIApplication.shared.windows.first(where: { $0.isKeyWindow })
@@ -15,6 +21,7 @@ class SettingManager {
     private var buttonView: SettingButtonView
     private var contentView: SettingContentView
         
+    var delegate: SettingManagerProtocol?
     
     init() {
         self.buttonView = SettingButtonView(frame: CGRect(x: .mainWidth - 62,
@@ -40,6 +47,7 @@ class SettingManager {
     func passPlayerInfos(with data: [PlayerInfo]) {
         
         self.contentView.playerInfos = data
+        self.contentView.playerList.reloadData()
         
     }
     
@@ -54,6 +62,7 @@ extension SettingManager: ButtonViewProtocol {
         case .began:
             
             self.keyWindow?.insertSubview(self.contentView, belowSubview: self.buttonView)
+            self.delegate?.settingManagerDidOpenContentView()
             break
         
         default:
@@ -70,11 +79,10 @@ extension SettingManager: ButtonViewProtocol {
 
 
 extension SettingManager: ContentViewProtocol {
-    
-    func resetUIToInitialState() {
-       
+    func resetUIToInitialState(with data: [PlayerInfo]) {
         self.buttonView.setAlpha(with: 1, animate: true)
-        
+        self.delegate?.settingManagerDidCloseContentView(with: data)
+
     }
     
     

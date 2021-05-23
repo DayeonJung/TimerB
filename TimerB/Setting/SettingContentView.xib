@@ -115,7 +115,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="R75-hw-OHb">
-                                <rect key="frame" x="59" y="288" width="296" height="556"/>
+                                <rect key="frame" x="59" y="288" width="296" height="488"/>
                                 <color key="backgroundColor" name="Card_Background"/>
                             </tableView>
                         </subviews>
@@ -125,7 +125,7 @@
                             <constraint firstItem="R75-hw-OHb" firstAttribute="top" secondItem="zrb-vo-zOJ" secondAttribute="bottom" constant="48" id="dEp-9B-RaV"/>
                             <constraint firstItem="zrb-vo-zOJ" firstAttribute="centerX" secondItem="b9n-Ht-vah" secondAttribute="centerX" id="igk-pO-YXR"/>
                             <constraint firstItem="R75-hw-OHb" firstAttribute="leading" secondItem="zrb-vo-zOJ" secondAttribute="leading" id="lmj-Ry-B4f"/>
-                            <constraint firstAttribute="bottom" secondItem="R75-hw-OHb" secondAttribute="bottom" constant="52" id="vfC-Zy-pLv"/>
+                            <constraint firstAttribute="bottom" secondItem="R75-hw-OHb" secondAttribute="bottom" constant="120" id="vfC-Zy-pLv"/>
                         </constraints>
                     </view>
                     <blurEffect style="regular"/>
