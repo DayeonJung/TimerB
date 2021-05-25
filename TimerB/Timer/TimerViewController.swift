@@ -108,7 +108,9 @@ extension TimerViewController: SettingManagerProtocol {
     }
     
     func settingManagerDidCloseContentView(with data: [PlayerInfo]) {
-        self.timerViewModel?.shouldUpdatePlayerInfos(with: data)
+        if !data.isEmpty {
+            self.timerViewModel?.shouldUpdatePlayerInfos(with: data)
+        }
         
     }
     

@@ -118,11 +118,9 @@ class TimerViewModel: TimerViewModelProtocol {
     func shouldUpdatePlayerInfos(with data: [PlayerInfo]) {
         
         // 타이머를 재시작할 멤버는?
-        // 1순위 : 현재 카운트다운하고 있는 player
-        // 2순위 : 1순위가 삭제되어 없을 경우, 현재 존재하는 player 중 다음 순서.
+        // 현재 카운트다운하고 있는 player
 
         var idxToRestart = 0
-        var dataIndexChanged = data
         let currentPlayer = self.playerInfo[self.currentPlayerIdx]
         
         
@@ -131,29 +129,10 @@ class TimerViewModel: TimerViewModelProtocol {
             
             idxToRestart = playerIdx
             
-        } else {
-            
-            // 현재 존재하는 player 중 다음 순서의 인덱스 저장.
-            for (currentIdx, info) in data.enumerated() {
-                
-                if info.index > self.currentPlayerIdx {
-                    idxToRestart = currentIdx
-                    break
-                }
-                
-            }
-            
-            // 바뀐 순서대로 0부터 인덱스 조정
-            dataIndexChanged = dataIndexChanged.enumerated().map { (index, info) -> PlayerInfo in
-                return PlayerInfo(index: index,
-                                  color: info.color,
-                                  name: info.name)
-            }
-            
         }
         
         
-        self.playerInfo = dataIndexChanged
+        self.playerInfo = data
         self.currentPlayerIdx = idxToRestart
         self.shouldStop = false
 
