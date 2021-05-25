@@ -66,6 +66,7 @@ class SettingContentView: UIView {
         self.setPlayerListUI()
         self.setNoticeButtonsEvent()
         
+        self.playerList.isEditing = true
     }
 
 
@@ -193,19 +194,34 @@ extension SettingContentView: UITableViewDelegate, UITableViewDataSource {
         return self.playerInfos.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.loadCell(identifier: PlayerCell.self, indexPath: indexPath)
         cell.info = self.playerInfos[indexPath.row]
+        cell.overrideUserInterfaceStyle = .dark
         return cell
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     
-        if editingStyle == .delete {
-            self.playerInfos.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-
-        }
+    
+    func tableView(_ tableView: UITableView, shouldIndentWhileEditingRowAt indexPath: IndexPath) -> Bool {
+        return false
     }
+
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+
+
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let info = self.playerInfos.remove(at: sourceIndexPath.row)
+        self.playerInfos.insert(info, at: destinationIndexPath.row)
+    }
+    
     
 }

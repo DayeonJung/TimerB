@@ -47,23 +47,13 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="HGn-w8-thN">
-                        <rect key="frame" x="272" y="22" width="24" height="20"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="24" id="qQy-zk-UOZ"/>
-                            <constraint firstAttribute="height" constant="20" id="t9Y-Ee-c7X"/>
-                        </constraints>
-                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="HGn-w8-thN" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="6lD-Mj-QQE"/>
                     <constraint firstAttribute="bottom" secondItem="jVl-9y-ebE" secondAttribute="bottom" constant="12" id="8WX-UO-urh"/>
                     <constraint firstItem="Ov6-DW-Zxo" firstAttribute="leading" secondItem="jVl-9y-ebE" secondAttribute="trailing" constant="16" id="GtG-Al-EAv"/>
                     <constraint firstItem="jVl-9y-ebE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MCk-20-4Ew"/>
                     <constraint firstItem="jVl-9y-ebE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ar3-cs-94C"/>
-                    <constraint firstAttribute="trailing" secondItem="HGn-w8-thN" secondAttribute="trailing" constant="24" id="cJn-Pk-7F4"/>
                     <constraint firstItem="Ov6-DW-Zxo" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="mYv-Zb-K1j"/>
                 </constraints>
             </tableViewCellContentView>
@@ -77,7 +67,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="menu" width="512" height="512"/>
         <image name="person" width="512" height="512"/>
     </resources>
 </document>
