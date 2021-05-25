@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol OptionViewModelProtocol: class {
+protocol OptionViewModelProtocol {
     var option: OptionModel { get }
     var valueDidChange: ((OptionViewModelProtocol) -> ())? { get set }
     var readyToShowAlertView: ((UIAlertController) -> ())? { get set }

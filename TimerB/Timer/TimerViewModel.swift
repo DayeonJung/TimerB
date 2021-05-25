@@ -8,10 +8,6 @@
 import Foundation
 import UIKit
 
-enum Direction {
-    case Next
-    case Back
-}
 
 protocol TimerViewModelProtocol {
     var playerInfo: [PlayerInfo] { get set }
@@ -22,6 +18,7 @@ protocol TimerViewModelProtocol {
     var timerStop: ((Bool) -> ())? { get set }
     func shouldGoToNextPlayer(to: Direction)
     func getMaxTime() -> Int
+    func shouldUpdatePlayerInfos(with: [PlayerInfo])
 }
 
 class TimerViewModel: TimerViewModelProtocol {
@@ -115,4 +112,32 @@ class TimerViewModel: TimerViewModelProtocol {
     func getMaxTime() -> Int {
         return self.maxTime
     }
+    
+    
+    
+    func shouldUpdatePlayerInfos(with data: [PlayerInfo]) {
+        
+        // 타이머를 재시작할 멤버는?
+        // 현재 카운트다운하고 있는 player
+
+        var idxToRestart = 0
+        let currentPlayer = self.playerInfo[self.currentPlayerIdx]
+        
+        
+        // 현재 플레이어가 남아있을 경우 그대로 보여준다.
+        if let playerIdx = data.firstIndex(where: {$0 == currentPlayer}) {
+            
+            idxToRestart = playerIdx
+            
+        }
+        
+        
+        self.playerInfo = data
+        self.currentPlayerIdx = idxToRestart
+        self.shouldStop = false
+
+
+    }
+    
+    
 }

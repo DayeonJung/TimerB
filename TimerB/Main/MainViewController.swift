@@ -13,14 +13,19 @@ class MainViewController: UIViewController {
     
     var mainViewModel = MainViewModel()
     
+    var settingContainer: SettingManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.mainList.setCell(cellName: SelectOptionCell.self)
         self.mainList.setCell(cellName: StartGameCell.self)
+        
         self.mainList.setCell(cellName: RecentCell.self)
         self.mainList.setReusableView(viewName: TitleHeader.self,
                                       viewType: .Header)
+
+        self.settingContainer = SettingManager()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +36,13 @@ class MainViewController: UIViewController {
         self.mainList.reloadData()
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.settingContainer.passPlayerInfos(with: [])
+    }
+    
     private func moveToNextPage() {
         
         let timerVC = getController(with: .Main,
@@ -38,6 +50,8 @@ class MainViewController: UIViewController {
         let timeVM = self.mainViewModel.setTimeViewModel()
         
         timerVC.timerViewModel = timeVM
+        self.settingContainer.delegate = timerVC
+        self.settingContainer.passPlayerInfos(with: timeVM.playerInfo)
         self.mainViewModel.saveAsRecentOption(with: timeVM)
         self.navigationController?.pushViewController(timerVC, animated: true)
 
@@ -161,5 +175,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
         case .Recent:
             return CGSize(width: UIScreen.main.bounds.width - 40, height: 60)
         }
+
     }
+
 }

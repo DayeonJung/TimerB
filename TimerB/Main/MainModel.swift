@@ -25,12 +25,15 @@ class RecentManager {
         guard let data = self.userDefaults.object(forKey: RECENT_KEY) as? Data else { return [] }
         
         return NSKeyedUnarchiver.unarchiveObject(with: data) as? [RecentOption] ?? []
+        
     }
     
     class func saveRecentOption(with data: RecentOption) {
         
         var saved = self.recentOptions()
         saved.removeAll(where: { $0.time == data.time && $0.player == data.player })
+        
+        if saved.count >= 10 { saved.removeLast() }
         
         saved.insert(data, at: 0)
         

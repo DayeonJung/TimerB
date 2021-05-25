@@ -74,7 +74,9 @@ class MainViewModel {
         let playerNum = self.optionInfo(with: .Player).option.currentValue()
         
         let playerInfos = Array(0..<playerNum).map({ num -> PlayerInfo in
-            return PlayerInfo(color: self.colorSet[num], name: "player " + String(num + 1))
+            return PlayerInfo(index: num,
+                              color: self.colorSet[num],
+                              name: "player " + String(num + 1))
         })
         
         return TimerViewModel(time: self.optionInfo(with: .Time).option.currentValue(),
