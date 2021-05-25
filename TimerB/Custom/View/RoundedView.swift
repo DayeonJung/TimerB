@@ -45,7 +45,7 @@ class RoundedView: UIView {
     }
     
     
-    private func commoninit(radius: CGFloat? = nil,
+    func commoninit(radius: CGFloat? = nil,
                             bgColor: UIColor? = nil) {
         
         self.clipsToBounds = true

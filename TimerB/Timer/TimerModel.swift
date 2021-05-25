@@ -8,8 +8,16 @@
 import Foundation
 import UIKit
 
-struct PlayerInfo {
+struct PlayerInfo: Equatable {
+    let index: Int
     let color: UIColor
     let name: String
+    
+    
 }
 
+
+enum Direction {
+    case Next
+    case Back
+}
