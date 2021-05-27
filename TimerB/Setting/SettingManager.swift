@@ -60,9 +60,7 @@ extension SettingManager: ButtonViewProtocol {
 
         switch state {
         case .began:
-            
-            self.keyWindow?.insertSubview(self.contentView, belowSubview: self.buttonView)
-            self.delegate?.settingManagerDidOpenContentView()
+            self.setContentView()
             break
         
         default:
@@ -74,6 +72,16 @@ extension SettingManager: ButtonViewProtocol {
         
     }
     
+    
+    func didRecognizeTapGesture() {
+        self.setContentView()
+        self.contentView.didRecognizePanGesture(state: .ended, intensity: 1.0)
+    }
+    
+    private func setContentView() {
+        self.keyWindow?.insertSubview(self.contentView, belowSubview: self.buttonView)
+        self.delegate?.settingManagerDidOpenContentView()
+    }
     
 }
 

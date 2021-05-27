@@ -9,6 +9,7 @@ import UIKit
 
 protocol ButtonViewProtocol {
     func didRecognizePanGesture(state: UIGestureRecognizer.State, intensity: CGFloat)
+    func didRecognizeTapGesture()
 }
 
 class SettingButtonView: RoundedView {
@@ -50,6 +51,8 @@ class SettingButtonView: RoundedView {
         self.isUserInteractionEnabled = true
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self,
                                                                  action: #selector(self.didPanSettingView)))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self,
+                                                         action: #selector(self.didTapSettingView)))
         self.initSettingIcon()
         self.initialFrame = self.frame
         
@@ -79,14 +82,29 @@ class SettingButtonView: RoundedView {
             break
         case .ended:
             let alpha: CGFloat = self.intensity > 0.5 ? 0.0 : 1.0
-            self.moveTo(frame: self.initialFrame)
-            self.setAlpha(with: alpha, animate: true)
+            self.setUI(with: alpha)
 
         default:
             break
         }
         
         
+    }
+    
+    
+    @objc private func didTapSettingView(_ sender: UITapGestureRecognizer) {
+
+        let alpha: CGFloat = 0.0
+        self.setUI(with: alpha)
+        
+        self.delegate?.didRecognizeTapGesture()
+
+    }
+    
+    
+    private func setUI(with alpha: CGFloat) {
+        self.moveTo(frame: self.initialFrame)
+        self.setAlpha(with: alpha, animate: true)
     }
     
     
