@@ -7,7 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6050483D26492A87007DBF46 /* NoticeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6050483C26492A87007DBF46 /* NoticeManager.swift */; };
+		60798678264B8E0200715280 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60798677264B8E0200715280 /* SettingManager.swift */; };
+		60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FFB6BC2643800A00B1A671 /* SettingContentView.xib */; };
+		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
+		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
 		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
+		B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42381652642946A00D9E2B1 /* SettingContentView.swift */; };
+		B423844B2642E12200214582 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423844A2642E12200214582 /* SettingButtonView.swift */; };
+		B43F91492656A0220028CF27 /* PlayerListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43F91482656A0220028CF27 /* PlayerListHeader.xib */; };
+		B43F914C2656A0340028CF27 /* PlayerListHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43F914B2656A0340028CF27 /* PlayerListHeader.swift */; };
+		B453EBEC26502CEE00C24DA3 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B453EBEB26502CEE00C24DA3 /* alert.mp3 */; };
 		B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */; };
 		B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */; };
 		B47233232626DC6100B85B0E /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47233222626DC6100B85B0E /* RoundedView.swift */; };
@@ -17,7 +27,15 @@
 		B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4824916261B5FBE00D07969 /* StartGameCell.swift */; };
 		B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4824917261B5FBE00D07969 /* StartGameCell.xib */; };
 		B482491C261B61AB00D07969 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B482491B261B61AB00D07969 /* Color.xcassets */; };
-		B489FBB6263EC72C00F5C729 /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B489FBB5263EC72C00F5C729 /* UnderlineLabel.swift */; };
+		B48B787026513CC800378FB4 /* PlayerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48B786E26513CC800378FB4 /* PlayerCell.swift */; };
+		B48B787126513CC800378FB4 /* PlayerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48B786F26513CC800378FB4 /* PlayerCell.xib */; };
+		B48C27F4265021AF000BEB5A /* UnderlineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C27F3265021AF000BEB5A /* UnderlineLabel.swift */; };
+		B48C27F8265021D9000BEB5A /* TitleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48C27F6265021D9000BEB5A /* TitleHeader.xib */; };
+		B48C27F9265021D9000BEB5A /* TitleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C27F7265021D9000BEB5A /* TitleHeader.swift */; };
+		B48C27FE26502208000BEB5A /* RecentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48C27FC26502208000BEB5A /* RecentCell.xib */; };
+		B48C27FF26502208000BEB5A /* RecentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C27FD26502208000BEB5A /* RecentCell.swift */; };
+		B48C28032650223A000BEB5A /* TitleValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48C28012650223A000BEB5A /* TitleValueView.swift */; };
+		B48C28042650223A000BEB5A /* TitleValueView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48C28022650223A000BEB5A /* TitleValueView.xib */; };
 		B4A08DC32619B39300F46CD9 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A08DC22619B39300F46CD9 /* List.swift */; };
 		B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CB26198E18002DEBC7 /* AppDelegate.swift */; };
 		B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */; };
@@ -35,7 +53,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6050483C26492A87007DBF46 /* NoticeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManager.swift; sourceTree = "<group>"; };
+		60798677264B8E0200715280 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
+		60FFB6BC2643800A00B1A671 /* SettingContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingContentView.xib; sourceTree = "<group>"; };
+		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
 		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		B42381652642946A00D9E2B1 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
+		B423844A2642E12200214582 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
+		B43F91482656A0220028CF27 /* PlayerListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerListHeader.xib; sourceTree = "<group>"; };
+		B43F914B2656A0340028CF27 /* PlayerListHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListHeader.swift; sourceTree = "<group>"; };
+		B453EBEB26502CEE00C24DA3 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
 		B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectOptionCell.swift; sourceTree = "<group>"; };
 		B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectOptionCell.xib; sourceTree = "<group>"; };
 		B47233222626DC6100B85B0E /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
@@ -45,7 +73,15 @@
 		B4824916261B5FBE00D07969 /* StartGameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartGameCell.swift; sourceTree = "<group>"; };
 		B4824917261B5FBE00D07969 /* StartGameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartGameCell.xib; sourceTree = "<group>"; };
 		B482491B261B61AB00D07969 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		B489FBB5263EC72C00F5C729 /* UnderlineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnderlineLabel.swift; sourceTree = "<group>"; };
+		B48B786E26513CC800378FB4 /* PlayerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCell.swift; sourceTree = "<group>"; };
+		B48B786F26513CC800378FB4 /* PlayerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerCell.xib; sourceTree = "<group>"; };
+		B48C27F3265021AF000BEB5A /* UnderlineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnderlineLabel.swift; sourceTree = "<group>"; };
+		B48C27F6265021D9000BEB5A /* TitleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleHeader.xib; sourceTree = "<group>"; };
+		B48C27F7265021D9000BEB5A /* TitleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleHeader.swift; sourceTree = "<group>"; };
+		B48C27FC26502208000BEB5A /* RecentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecentCell.xib; sourceTree = "<group>"; };
+		B48C27FD26502208000BEB5A /* RecentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentCell.swift; sourceTree = "<group>"; };
+		B48C28012650223A000BEB5A /* TitleValueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleValueView.swift; sourceTree = "<group>"; };
+		B48C28022650223A000BEB5A /* TitleValueView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TitleValueView.xib; sourceTree = "<group>"; };
 		B4A08DC22619B39300F46CD9 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		B4A255C826198E18002DEBC7 /* TimerB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4A255CB26198E18002DEBC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B43F914626569FF90028CF27 /* PlayerList */ = {
+			isa = PBXGroup;
+			children = (
+				B48B786E26513CC800378FB4 /* PlayerCell.swift */,
+				B48B786F26513CC800378FB4 /* PlayerCell.xib */,
+				B43F91482656A0220028CF27 /* PlayerListHeader.xib */,
+				B43F914B2656A0340028CF27 /* PlayerListHeader.swift */,
+			);
+			path = PlayerList;
+			sourceTree = "<group>";
+		};
 		B472331E2626DBBF00B85B0E /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +134,12 @@
 		B47233202626DBCB00B85B0E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B48C28012650223A000BEB5A /* TitleValueView.swift */,
+				B48C28022650223A000BEB5A /* TitleValueView.xib */,
+				B47233222626DC6100B85B0E /* RoundedView.swift */,
 				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
 				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
 				B419B53A2621606B00258796 /* WaveView.swift */,
-				B47233222626DC6100B85B0E /* RoundedView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,12 +154,34 @@
 			path = Timer;
 			sourceTree = "<group>";
 		};
-		B489FBAF263EC6C700F5C729 /* Label */ = {
+		B48C27F2265021AF000BEB5A /* Label */ = {
 			isa = PBXGroup;
 			children = (
-				B489FBB5263EC72C00F5C729 /* UnderlineLabel.swift */,
+				B48C27F3265021AF000BEB5A /* UnderlineLabel.swift */,
 			);
 			path = Label;
+			sourceTree = "<group>";
+		};
+		B48C27FB26502208000BEB5A /* Recent */ = {
+			isa = PBXGroup;
+			children = (
+				B48C27FC26502208000BEB5A /* RecentCell.xib */,
+				B48C27FD26502208000BEB5A /* RecentCell.swift */,
+			);
+			path = Recent;
+			sourceTree = "<group>";
+		};
+		B48D297A26356A47003AC9A1 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				6050483C26492A87007DBF46 /* NoticeManager.swift */,
+				60798677264B8E0200715280 /* SettingManager.swift */,
+				B423844A2642E12200214582 /* SettingButtonView.swift */,
+				B42381652642946A00D9E2B1 /* SettingContentView.swift */,
+				60FFB6BC2643800A00B1A671 /* SettingContentView.xib */,
+				B43F914626569FF90028CF27 /* PlayerList */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		B4A08DC12619B37600F46CD9 /* Extension */ = {
@@ -118,6 +189,8 @@
 			children = (
 				B4A08DC22619B39300F46CD9 /* List.swift */,
 				B47FF099261F25B10079BC74 /* Storyboard.swift */,
+				B4178B952634133A004ABD79 /* Color.swift */,
+				B4178B98263417F1004ABD79 /* CGFloat.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -145,11 +218,13 @@
 				B4A255EC26199711002DEBC7 /* Custom */,
 				B4A255E0261992CC002DEBC7 /* Main */,
 				B47FF094261F24850079BC74 /* Timer */,
+				B48D297A26356A47003AC9A1 /* Setting */,
 				B4A255CB26198E18002DEBC7 /* AppDelegate.swift */,
 				B4A255CD26198E18002DEBC7 /* SceneDelegate.swift */,
 				B4A255D126198E18002DEBC7 /* Main.storyboard */,
 				B482491B261B61AB00D07969 /* Color.xcassets */,
 				B4A255D426198E19002DEBC7 /* Assets.xcassets */,
+				B453EBEB26502CEE00C24DA3 /* alert.mp3 */,
 				B4A255D626198E19002DEBC7 /* LaunchScreen.storyboard */,
 				B4A255D926198E19002DEBC7 /* Info.plist */,
 			);
@@ -159,6 +234,8 @@
 		B4A255E0261992CC002DEBC7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B48C27F7265021D9000BEB5A /* TitleHeader.swift */,
+				B48C27F6265021D9000BEB5A /* TitleHeader.xib */,
 				B4A255E1261993A2002DEBC7 /* MainModel.swift */,
 				B4A255E526199456002DEBC7 /* MainViewModel.swift */,
 				B4A255E82619952E002DEBC7 /* MainViewController.swift */,
@@ -170,7 +247,7 @@
 		B4A255EC26199711002DEBC7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
-				B489FBAF263EC6C700F5C729 /* Label */,
+				B48C27F2265021AF000BEB5A /* Label */,
 				B472331E2626DBBF00B85B0E /* Button */,
 				B47233202626DBCB00B85B0E /* View */,
 			);
@@ -180,6 +257,7 @@
 		B4D653B7261F2C93009D81F4 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B48C27FB26502208000BEB5A /* Recent */,
 				B46E0B6A2619ADF100CAEC34 /* SelectOptionCell.swift */,
 				B46E0B6B2619ADF100CAEC34 /* SelectOptionCell.xib */,
 				B4824916261B5FBE00D07969 /* StartGameCell.swift */,
@@ -248,10 +326,17 @@
 				B4A255F1261999CD002DEBC7 /* OptionControl.xib in Resources */,
 				B46E0B6D2619ADF100CAEC34 /* SelectOptionCell.xib in Resources */,
 				B4A255D826198E19002DEBC7 /* LaunchScreen.storyboard in Resources */,
+				B43F91492656A0220028CF27 /* PlayerListHeader.xib in Resources */,
 				B4A255D526198E19002DEBC7 /* Assets.xcassets in Resources */,
 				B482491C261B61AB00D07969 /* Color.xcassets in Resources */,
 				B4824919261B5FBE00D07969 /* StartGameCell.xib in Resources */,
+				B48C28042650223A000BEB5A /* TitleValueView.xib in Resources */,
+				B48C27FE26502208000BEB5A /* RecentCell.xib in Resources */,
+				B48C27F8265021D9000BEB5A /* TitleHeader.xib in Resources */,
+				B48B787126513CC800378FB4 /* PlayerCell.xib in Resources */,
 				B4A255D326198E18002DEBC7 /* Main.storyboard in Resources */,
+				60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */,
+				B453EBEC26502CEE00C24DA3 /* alert.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,12 +351,20 @@
 				B4A255E626199456002DEBC7 /* MainViewModel.swift in Sources */,
 				B4A255E2261993A2002DEBC7 /* MainModel.swift in Sources */,
 				B46E0B6C2619ADF100CAEC34 /* SelectOptionCell.swift in Sources */,
+				B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */,
+				B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */,
+				B43F914C2656A0340028CF27 /* PlayerListHeader.swift in Sources */,
 				B4A255E92619952E002DEBC7 /* MainViewController.swift in Sources */,
+				6050483D26492A87007DBF46 /* NoticeManager.swift in Sources */,
 				B47FF09A261F25B10079BC74 /* Storyboard.swift in Sources */,
 				B47233232626DC6100B85B0E /* RoundedView.swift in Sources */,
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
+				B48C28032650223A000BEB5A /* TitleValueView.swift in Sources */,
+				B48C27F9265021D9000BEB5A /* TitleHeader.swift in Sources */,
 				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
-				B489FBB6263EC72C00F5C729 /* UnderlineLabel.swift in Sources */,
+				B423844B2642E12200214582 /* SettingButtonView.swift in Sources */,
+				60798678264B8E0200715280 /* SettingManager.swift in Sources */,
+				B48B787026513CC800378FB4 /* PlayerCell.swift in Sources */,
 				B4A255CC26198E18002DEBC7 /* AppDelegate.swift in Sources */,
 				B4A255EE261999BD002DEBC7 /* OptionControl.swift in Sources */,
 				B4A255CE26198E18002DEBC7 /* SceneDelegate.swift in Sources */,
@@ -279,7 +372,10 @@
 				B4824914261B5B5600D07969 /* TitleButton.swift in Sources */,
 				B4D653BA261F2E53009D81F4 /* TimerModel.swift in Sources */,
 				B4824918261B5FBE00D07969 /* StartGameCell.swift in Sources */,
+				B48C27F4265021AF000BEB5A /* UnderlineLabel.swift in Sources */,
 				B4A08DC32619B39300F46CD9 /* List.swift in Sources */,
+				B48C27FF26502208000BEB5A /* RecentCell.swift in Sources */,
+				B4178B962634133A004ABD79 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,8 +522,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 886LX3G4KC;
 				INFOPLIST_FILE = TimerB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -437,7 +533,7 @@
 				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TimerB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "TimerB-Development";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

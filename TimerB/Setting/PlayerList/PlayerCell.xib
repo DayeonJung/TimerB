@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="PlayerCell" customModule="TimerB" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVl-9y-ebE" userLabel="Icon View" customClass="RoundedView" customModule="TimerB" customModuleProvider="target">
+                        <rect key="frame" x="20" y="12" width="40" height="40"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="1zK-wm-Z21">
+                                <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="1kK-YD-F45"/>
+                                    <constraint firstAttribute="width" constant="20" id="ups-oy-ikq"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1zK-wm-Z21" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="7Md-ay-rC4"/>
+                            <constraint firstAttribute="width" constant="40" id="NmZ-U7-9ap"/>
+                            <constraint firstAttribute="height" constant="40" id="kZO-sf-k9l"/>
+                            <constraint firstItem="1zK-wm-Z21" firstAttribute="centerX" secondItem="jVl-9y-ebE" secondAttribute="centerX" id="oeh-90-OK3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ov6-DW-Zxo">
+                        <rect key="frame" x="76" y="22" width="42" height="20"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="jVl-9y-ebE" secondAttribute="bottom" constant="12" id="8WX-UO-urh"/>
+                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="leading" secondItem="jVl-9y-ebE" secondAttribute="trailing" constant="16" id="GtG-Al-EAv"/>
+                    <constraint firstItem="jVl-9y-ebE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MCk-20-4Ew"/>
+                    <constraint firstItem="jVl-9y-ebE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="ar3-cs-94C"/>
+                    <constraint firstItem="Ov6-DW-Zxo" firstAttribute="centerY" secondItem="jVl-9y-ebE" secondAttribute="centerY" id="mYv-Zb-K1j"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="iconView" destination="jVl-9y-ebE" id="IP8-3v-qTY"/>
+                <outlet property="playerLabel" destination="Ov6-DW-Zxo" id="asb-1L-ehe"/>
+            </connections>
+            <point key="canvasLocation" x="91" y="154"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="person" width="512" height="512"/>
+    </resources>
+</document>

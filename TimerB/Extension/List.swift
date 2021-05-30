@@ -45,3 +45,23 @@ extension UICollectionView {
     }
     
 }
+
+
+extension UITableView {
+    
+    func loadCell<T>(identifier:T.Type, indexPath:IndexPath? = nil) -> T {
+        
+        if let path = indexPath {
+           return self.dequeueReusableCell(withIdentifier: String(describing: identifier), for: path) as! T
+        }
+        
+        return self.dequeueReusableCell(withIdentifier: String(describing: identifier)) as! T
+    }
+    
+    
+    func setCell(cellName:UITableViewCell.Type) {
+        self.register(UINib(nibName: String(describing: cellName), bundle: nil), forCellReuseIdentifier: String(describing: cellName))
+    }
+    
+    
+}
