@@ -74,6 +74,8 @@ class TimerViewModel: TimerViewModelProtocol {
                                           selector: #selector(timeIsGoing),
                                           userInfo: nil,
                                           repeats: true)
+        
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     private func stopTimer() {
@@ -91,6 +93,8 @@ class TimerViewModel: TimerViewModelProtocol {
             self.currentTime = nextTime
         }
 
+        UIApplication.shared.isIdleTimerDisabled = true
+        
     }
     
     func shouldGoToNextPlayer(to: Direction) {
