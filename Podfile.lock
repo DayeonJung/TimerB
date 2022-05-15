@@ -1,0 +1,16 @@
+PODS:
+  - DYWave (1.0.0)
+
+DEPENDENCIES:
+  - DYWave (= 1.0.0)
+
+SPEC REPOS:
+  trunk:
+    - DYWave
+
+SPEC CHECKSUMS:
+  DYWave: 374a1166d2549ef263f65805a0bf8ce8fbad056c
+
+PODFILE CHECKSUM: 1aab9876d83de92d63865b76a2b9f6b12fa93b5b
+
+COCOAPODS: 1.11.3
