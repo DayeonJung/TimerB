@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import DYWave
 
 class TimerViewController: UIViewController {
 
@@ -19,7 +20,7 @@ class TimerViewController: UIViewController {
             
             self.timerViewModel?.playerDidChange = { player in
                 self.playerLabel.text = player.name
-                self.waveView.shouldInit(with: player.color)
+                self.waveView.resetComponents(backgroundColor: player.color)
                 self.noticeManager.notifyIfNeeded()
             }
             
@@ -61,13 +62,17 @@ class TimerViewController: UIViewController {
     
     
     private func initWaveView() {
-        self.waveView = WaveView(frame: CGRect(x: 0,
-                                               y: 0,
-                                               width: .mainWidth,
-                                               height: .mainHeight),
-                                 bgColor: self.timerViewModel?.playerInfo.first?.color ?? UIColor.white,
-                                 maxTime: self.timerViewModel?.getMaxTime() ?? 99)
-        
+        self.waveView = WaveView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height
+            ),
+            bgColor: self.timerViewModel?.playerInfo.first?.color ?? UIColor.white,
+            maxTime: self.timerViewModel?.getMaxTime() ?? 99,
+            zeroYPoint: 0
+        )
         self.view.insertSubview(self.waveView, at: 0)
         
         self.waveView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.didClickBackground)))

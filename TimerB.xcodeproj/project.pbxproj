@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		60FFB6BD2643800A00B1A671 /* SettingContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60FFB6BC2643800A00B1A671 /* SettingContentView.xib */; };
 		B4178B962634133A004ABD79 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B952634133A004ABD79 /* Color.swift */; };
 		B4178B99263417F1004ABD79 /* CGFloat.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4178B98263417F1004ABD79 /* CGFloat.swift */; };
-		B419B53B2621606B00258796 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B419B53A2621606B00258796 /* WaveView.swift */; };
 		B42381662642946A00D9E2B1 /* SettingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42381652642946A00D9E2B1 /* SettingContentView.swift */; };
 		B423844B2642E12200214582 /* SettingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B423844A2642E12200214582 /* SettingButtonView.swift */; };
 		B43F91492656A0220028CF27 /* PlayerListHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = B43F91482656A0220028CF27 /* PlayerListHeader.xib */; };
@@ -50,15 +49,17 @@
 		B4A255F426199C95002DEBC7 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A255F326199C95002DEBC7 /* IconButton.swift */; };
 		B4D653B4261F2959009D81F4 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D653B3261F2959009D81F4 /* TimerViewModel.swift */; };
 		B4D653BA261F2E53009D81F4 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D653B9261F2E53009D81F4 /* TimerModel.swift */; };
+		D0421D6D6B2481BAE80EE134 /* Pods_TimerB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30F2B76080FA3AEE051409D0 /* Pods_TimerB.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		30F2B76080FA3AEE051409D0 /* Pods_TimerB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TimerB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5218408331B1F3289037D08C /* Pods-TimerB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerB.debug.xcconfig"; path = "Target Support Files/Pods-TimerB/Pods-TimerB.debug.xcconfig"; sourceTree = "<group>"; };
 		6050483C26492A87007DBF46 /* NoticeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeManager.swift; sourceTree = "<group>"; };
 		60798677264B8E0200715280 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		60FFB6BC2643800A00B1A671 /* SettingContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingContentView.xib; sourceTree = "<group>"; };
 		B4178B952634133A004ABD79 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B4178B98263417F1004ABD79 /* CGFloat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGFloat.swift; sourceTree = "<group>"; };
-		B419B53A2621606B00258796 /* WaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 		B42381652642946A00D9E2B1 /* SettingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingContentView.swift; sourceTree = "<group>"; };
 		B423844A2642E12200214582 /* SettingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingButtonView.swift; sourceTree = "<group>"; };
 		B43F91482656A0220028CF27 /* PlayerListHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerListHeader.xib; sourceTree = "<group>"; };
@@ -98,6 +99,7 @@
 		B4A255F326199C95002DEBC7 /* IconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 		B4D653B3261F2959009D81F4 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B4D653B9261F2E53009D81F4 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		C8E872C94B4024744EEEB54A /* Pods-TimerB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimerB.release.xcconfig"; path = "Target Support Files/Pods-TimerB/Pods-TimerB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,12 +107,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0421D6D6B2481BAE80EE134 /* Pods_TimerB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B381A57F8CB68BAFFDB63B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				30F2B76080FA3AEE051409D0 /* Pods_TimerB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B43F914626569FF90028CF27 /* PlayerList */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,7 +150,6 @@
 				B47233222626DC6100B85B0E /* RoundedView.swift */,
 				B4A255ED261999BD002DEBC7 /* OptionControl.swift */,
 				B4A255F0261999CD002DEBC7 /* OptionControl.xib */,
-				B419B53A2621606B00258796 /* WaveView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +210,8 @@
 			children = (
 				B4A255CA26198E18002DEBC7 /* TimerB */,
 				B4A255C926198E18002DEBC7 /* Products */,
+				FE7E2B78E2E5C17C5490DCB2 /* Pods */,
+				1B381A57F8CB68BAFFDB63B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -266,6 +278,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		FE7E2B78E2E5C17C5490DCB2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5218408331B1F3289037D08C /* Pods-TimerB.debug.xcconfig */,
+				C8E872C94B4024744EEEB54A /* Pods-TimerB.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4A255DC26198E19002DEBC7 /* Build configuration list for PBXNativeTarget "TimerB" */;
 			buildPhases = (
+				6347AC37FF1DFEB6928CD1DC /* [CP] Check Pods Manifest.lock */,
 				B4A255C426198E18002DEBC7 /* Sources */,
 				B4A255C526198E18002DEBC7 /* Frameworks */,
 				B4A255C626198E18002DEBC7 /* Resources */,
+				68B129305F77C75FC820A91F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -342,6 +365,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6347AC37FF1DFEB6928CD1DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TimerB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68B129305F77C75FC820A91F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimerB/Pods-TimerB-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TimerB/Pods-TimerB-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TimerB/Pods-TimerB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B4A255C426198E18002DEBC7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -361,7 +426,6 @@
 				B47FF096261F24AE0079BC74 /* TimerViewController.swift in Sources */,
 				B48C28032650223A000BEB5A /* TitleValueView.swift in Sources */,
 				B48C27F9265021D9000BEB5A /* TitleHeader.swift in Sources */,
-				B419B53B2621606B00258796 /* WaveView.swift in Sources */,
 				B423844B2642E12200214582 /* SettingButtonView.swift in Sources */,
 				60798678264B8E0200715280 /* SettingManager.swift in Sources */,
 				B48B787026513CC800378FB4 /* PlayerCell.swift in Sources */,
@@ -519,6 +583,7 @@
 		};
 		B4A255DD26198E19002DEBC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5218408331B1F3289037D08C /* Pods-TimerB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -526,6 +591,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 886LX3G4KC;
 				INFOPLIST_FILE = TimerB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +607,7 @@
 		};
 		B4A255DE26198E19002DEBC7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8E872C94B4024744EEEB54A /* Pods-TimerB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -548,6 +615,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 886LX3G4KC;
 				INFOPLIST_FILE = TimerB/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
